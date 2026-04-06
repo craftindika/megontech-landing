@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dynamic Pricing for Independent Hotels: A Practical Playbook | megontech Blog</title>
+  <meta name="description" content="A practical guide to dynamic pricing for independent hotels — learn the 3 signals that should trigger a rate change and a simple framework to start today."/>
+  <meta name="author" content="Supratim Kashyap"/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://megontech.com/blog/dynamic-pricing"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:title" content="Dynamic Pricing for Independent Hotels: A Practical Playbook"/>
+  <meta property="og:description" content="A practical guide to dynamic pricing for independent hotels."/>
+  <meta property="og:image" content="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200&q=80"/>
+  <meta property="og:url" content="https://megontech.com/blog/dynamic-pricing"/>
+  <meta property="og:locale" content="en_IN"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Dynamic Pricing for Independent Hotels: A Practical Playbook"/>
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200&q=80"/>
+  <link rel="icon" href="/assets/favicon/favicon.svg" type="image/svg+xml"/>
+  <link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png"/>
+  <meta name="theme-color" content="#0F172A"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: {
+          brand: { 950:'#020617', 900:'#0F172A', 800:'#1E293B', 700:'#1D4ED8', 600:'#2563EB', 500:'#3B82F6', 400:'#60A5FA', 100:'#DBEAFE', 50:'#EFF6FF' },
+          gold:  { 600:'#D97706', 500:'#F59E0B', 400:'#FBBF24', 100:'#FEF3C7' }
+        },
+        fontFamily: { sans: ['Inter','system-ui','sans-serif'], mono: ['JetBrains Mono','monospace'] }
+      }}
+    }
+  </script>
+  <link rel="stylesheet" href="../css/custom.css"/>
+</head>
+<body class="font-sans bg-white text-slate-900 antialiased">
+
+  <!-- NAVBAR -->
+  <header>
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" aria-label="Main navigation">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-16">
+        <a href="../index.html" class="flex items-center" aria-label="megontech home">
+          <svg viewBox="0 0 160 32" xmlns="http://www.w3.org/2000/svg" height="32" aria-hidden="true">
+            <defs><linearGradient id="lg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#1D4ED8"/><stop offset="100%" style="stop-color:#6366F1"/></linearGradient></defs>
+            <rect x="0" y="2" width="28" height="28" rx="7" fill="url(#lg)"/>
+            <path d="M6 26 V13 L14 6 L22 13 V26 H19 V16 L14 10.5 L9 16 V26 Z" fill="#fff" opacity="0.95"/>
+            <text x="36" y="22" font-family="Inter,system-ui,sans-serif" font-weight="800" font-size="18" fill="#F1F5F9" letter-spacing="-0.6">megon</text>
+            <text x="97" y="22" font-family="Inter,system-ui,sans-serif" font-weight="400" font-size="18" fill="#94A3B8" letter-spacing="-0.3">tech</text>
+          </svg>
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="../pms.html" class="text-slate-300 hover:text-white text-sm font-medium transition-colors">PMS</a>
+          <a href="../pos.html" class="text-slate-300 hover:text-white text-sm font-medium transition-colors">PoS</a>
+          <a href="../pricing.html" class="text-slate-300 hover:text-white text-sm font-medium transition-colors">Pricing</a>
+          <a href="../blog.html" class="text-white font-medium text-sm">Blog</a>
+          <a href="../about.html" class="text-slate-300 hover:text-white text-sm font-medium transition-colors">About</a>
+          <a href="../contact.html" class="text-slate-300 hover:text-white text-sm font-medium transition-colors">Contact</a>
+        </div>
+        <div class="hidden md:flex items-center gap-3">
+          <a href="#" class="btn-ghost-dark text-sm px-5 py-2">Login</a>
+          <a href="#" class="btn-gold text-sm px-5 py-2">Start Free Trial →</a>
+        </div>
+        <button id="mobile-menu-btn" class="md:hidden text-white p-2" aria-label="Toggle mobile menu" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/></svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ARTICLE HERO -->
+    <section class="relative pt-16">
+      <div class="relative h-[420px] lg:h-[480px] overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200&q=80&fit=crop" alt="Modern hotel room interior" class="w-full h-full object-cover" loading="eager"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-950 via-brand-950/60 to-brand-950/20"></div>
+        <span class="blog-tag bg-white/90 text-emerald-700 absolute top-24 right-6 lg:right-12">Revenue</span>
+        <div class="absolute bottom-0 left-0 right-0 p-8 lg:p-12">
+          <div class="max-w-4xl mx-auto">
+            <h1 class="text-3xl lg:text-5xl font-extrabold text-white tracking-tight mb-5 leading-tight">Dynamic Pricing for Independent Hotels: A Practical Playbook</h1>
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 rounded-full bg-gradient-to-br from-brand-600 to-indigo-500 flex items-center justify-center text-white font-bold text-sm">SK</div>
+              <div>
+                <p class="text-white font-medium text-sm">Supratim Kashyap</p>
+                <p class="text-slate-400 text-xs">March 22, 2026 · 7 min read</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARTICLE BODY -->
+    <article class="max-w-3xl mx-auto px-6 lg:px-8 py-12 lg:py-16">
+
+      <p class="text-lg text-slate-700 leading-relaxed mb-8">Ask any independent hotel owner in India about dynamic pricing, and you'll likely hear one of two responses: "That's for the big chains" or "We tried changing rates once and it confused our guests." Both reactions are understandable. Both are holding your hotel back from significant revenue growth.</p>
+
+      <p class="text-lg text-slate-700 leading-relaxed mb-8">Dynamic pricing isn't about wildly fluctuating your rates every hour like an airline. For independent hotels, it's about making smart, deliberate adjustments based on real demand signals. Hotels that do this well consistently see 12-18% higher revenue per available room, without adding a single new room or spending more on marketing.</p>
+
+      <!-- H2 -->
+      <h2 class="text-2xl font-bold text-slate-900 mb-4 mt-12 flex items-center gap-3">
+        <span class="w-1 h-8 bg-brand-600 rounded-full flex-shrink-0"></span>
+        Why Independent Hotels Avoid Dynamic Pricing (And Why They Shouldn't)
+      </h2>
+      <p class="text-lg text-slate-700 leading-relaxed mb-6">The resistance usually comes from three places. First, complexity. Revenue management systems designed for large chains feel overwhelming for a 30-room property. The dashboards are dense, the terminology is jargon-heavy, and the setup takes weeks. Second, fear of guest backlash. Hotel owners worry that a guest who paid 3,500 rupees on Tuesday will be upset to see the same room listed at 4,200 rupees on Saturday. Third, inertia. Flat-rate pricing is simple. It's predictable. And it feels safe.</p>
+      <p class="text-lg text-slate-700 leading-relaxed mb-8">But here's what flat-rate pricing actually costs you. On high-demand nights, you're leaving money on the table because you could have charged more. On low-demand nights, you're losing bookings to competitors who dropped their rates. Over a full year, this pattern quietly erodes your RevPAR by 15-20% compared to what smart pricing would deliver. The good news is that dynamic pricing for independent hotels doesn't require a revenue management degree or expensive software. It requires a framework, a few data points, and the discipline to act on them.</p>
+
+      <h2 class="text-2xl font-bold text-slate-900 mb-4 mt-12 flex items-center gap-3">
+        <span class="w-1 h-8 bg-brand-600 rounded-full flex-shrink-0"></span>
+        The 3 Signals That Should Trigger a Rate Change
+      </h2>
+      <p class="text-lg text-slate-700 leading-relaxed mb-6">You don't need to monitor 50 data points. For most independent hotels, three signals are enough to make informed pricing decisions.</p>
+      <p class="text-lg text-slate-700 leading-relaxed mb-6"><strong>Signal 1: Your own occupancy pace.</strong> How full are you for any given future date compared to where you normally are at this point in time? If you're already at 70% occupancy for next Saturday and you usually hit 70% only two days before, demand is running ahead of normal. That's a signal to raise your rate. If you're at 30% for a date that's three days away and you're normally at 60% by now, it's time to consider a tactical discount.</p>
+      <p class="text-lg text-slate-700 leading-relaxed mb-6"><strong>Signal 2: Local demand events.</strong> Is there a festival, conference, wedding season, or major event happening nearby? These create predictable demand spikes. You should be adjusting rates for these dates weeks in advance, not reacting the day before. A simple events calendar mapped to your rate plan can add lakhs to your annual revenue.</p>
+      <p class="text-lg text-slate-700 leading-relaxed mb-8"><strong>Signal 3: Competitor rates.</strong> What are the three or four hotels most similar to yours charging for the same dates? You don't need to match them exactly. But if every comparable hotel in your area is at 5,000 rupees and you're at 3,200, you're underpricing. If they're all at 2,800 and you're at 4,500, you may need to offer more value or adjust down.</p>
+
+      <!-- Tip box -->
+      <div class="bg-brand-50 border border-brand-100 rounded-xl p-6 mb-8">
+        <p class="text-sm font-semibold text-brand-700 mb-2">Pro Tip</p>
+        <p class="text-slate-700">Check competitor rates every Monday and Thursday. These are the two days when most hotels update their OTA pricing. A 10-minute check twice a week keeps you informed without becoming a full-time job.</p>
+      </div>
+
+      <h2 class="text-2xl font-bold text-slate-900 mb-4 mt-12 flex items-center gap-3">
+        <span class="w-1 h-8 bg-brand-600 rounded-full flex-shrink-0"></span>
+        A Simple Framework: Base Rate + Modifiers
+      </h2>
+      <p class="text-lg text-slate-700 leading-relaxed mb-6">Here's a framework any hotel can implement today, even without software. Start with your base rate. This is the rate you charge on a normal weekday when demand is average. It should cover your costs and deliver a reasonable margin. Think of it as your "default" price.</p>
+      <p class="text-lg text-slate-700 leading-relaxed mb-6">Now add modifiers. A weekend modifier might add 15-20% to your base rate. A local event modifier might add 25-40%. A high-season modifier might add 30-50%. A low-occupancy modifier might subtract 10-15% to attract last-minute bookings. The key is that these modifiers are pre-defined. You decide them once based on your market knowledge and historical data. Then you apply them systematically rather than making ad-hoc decisions under pressure.</p>
+      <p class="text-lg text-slate-700 leading-relaxed mb-8">For example, if your base rate for a Deluxe room is 3,500 rupees, your rate card might look like this: weekday base at 3,500, weekend at 4,000, festival weekend at 4,800, peak season weekday at 4,200, and a last-minute distress rate at 3,000. Five prices, clearly defined, easy to apply. That's dynamic pricing in its simplest and most effective form.</p>
+
+      <!-- Blockquote -->
+      <blockquote class="border-l-4 border-brand-400 pl-6 my-10">
+        <p class="text-xl text-slate-600 italic leading-relaxed">"We started with just three rate tiers: weekday, weekend, and event. Within four months, our average room rate increased by 14% and we didn't lose a single percentage point of occupancy."</p>
+        <p class="text-sm text-slate-500 mt-3 font-medium">— Priya Deshpande, Owner, Riverside Inn, Rishikesh</p>
+      </blockquote>
+
+      <h2 class="text-2xl font-bold text-slate-900 mb-4 mt-12 flex items-center gap-3">
+        <span class="w-1 h-8 bg-brand-600 rounded-full flex-shrink-0"></span>
+        How to Start Without Software (Then Why Software Makes It 10x Easier)
+      </h2>
+      <p class="text-lg text-slate-700 leading-relaxed mb-6">You can begin dynamic pricing with a spreadsheet. Create a calendar view for the next 90 days. Mark known events, festivals, and seasonal patterns. Assign each date one of your pre-defined rate tiers. Review and update the calendar every Monday. This manual approach works and it's infinitely better than flat pricing. But it has limits.</p>
+      <p class="text-lg text-slate-700 leading-relaxed mb-8">The spreadsheet can't tell you that bookings for March 15th are running 40% ahead of pace. It can't automatically adjust your OTA rates when your direct booking engine changes. It can't alert you when a competitor drops their rate by 20%. This is where a PMS with built-in rate management transforms the equation. With Horizon, you define your rate tiers and rules once. The system monitors your occupancy pace, flags dates where rates should change, and lets you push updated rates to all your channels with one click. What takes an hour with a spreadsheet takes 30 seconds with the right software.</p>
+
+      <h2 class="text-2xl font-bold text-slate-900 mb-4 mt-12 flex items-center gap-3">
+        <span class="w-1 h-8 bg-brand-600 rounded-full flex-shrink-0"></span>
+        Real Results: Hotels Seeing 12-18% Revenue Uplift
+      </h2>
+      <p class="text-lg text-slate-700 leading-relaxed mb-6">The numbers are consistent across the properties we work with. Independent hotels that move from flat pricing to even basic dynamic pricing see an average RevPAR increase of 12-18% within the first six months. This isn't theoretical. It's measured, repeatable, and it compounds over time as you refine your modifiers based on actual performance data.</p>
+      <p class="text-lg text-slate-700 leading-relaxed mb-8">A 40-room hotel with an average rate of 3,500 rupees and 65% occupancy generates roughly 33 lakhs per month in room revenue. A 15% improvement from dynamic pricing adds nearly 5 lakhs per month, or 60 lakhs per year, with no additional rooms, no renovation, and no extra marketing spend. The only investment is in being smarter about the rates you already charge.</p>
+
+      <!-- Key takeaway -->
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-6 mb-8">
+        <p class="text-sm font-semibold text-slate-900 mb-2">Key Takeaway</p>
+        <p class="text-slate-700">Dynamic pricing isn't reserved for big hotel chains. Independent hotels can start with a simple base-rate-plus-modifiers framework, monitor three demand signals (occupancy pace, local events, competitor rates), and see meaningful revenue improvement within months. Software automates and amplifies the process, but the mindset shift from flat pricing to demand-based pricing is where the real value begins.</p>
+      </div>
+
+      <p class="text-lg text-slate-700 leading-relaxed">Horizon PMS makes dynamic pricing effortless for independent hotels. Define your rate tiers, set your rules, and let the system do the heavy lifting. If you're ready to stop leaving revenue on the table, <a href="../pms.html" class="text-brand-600 font-medium hover:text-brand-700 underline decoration-brand-200 underline-offset-2">see what Horizon can do for your pricing strategy</a>.</p>
+
+    </article>
+
+    <!-- AUTHOR CARD -->
+    <section class="max-w-3xl mx-auto px-6 lg:px-8 pb-12">
+      <div class="bg-slate-50 rounded-2xl p-6 flex items-start gap-5 border border-slate-100">
+        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-brand-600 to-indigo-500 flex items-center justify-center text-white font-bold text-lg flex-shrink-0">SK</div>
+        <div>
+          <p class="font-bold text-slate-900">Supratim Kashyap</p>
+          <p class="text-sm text-brand-600 font-medium mb-2">Founding Director, megontech</p>
+          <p class="text-slate-600 text-sm leading-relaxed">Supratim combines deep hospitality knowledge with a relentless focus on building technology that simplifies hotel operations across India.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- RELATED ARTICLES -->
+    <section class="bg-slate-50 py-16">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8">
+        <h2 class="text-2xl font-bold text-slate-900 mb-8">Related Articles</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <a href="ota-vs-direct.html" class="card-blog group">
+            <div class="blog-cover bg-gradient-to-br from-emerald-500 to-emerald-700">
+              <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=600&h=300&fit=crop&q=80" alt="Hotel booking on laptop" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500"/>
+              <span class="blog-tag bg-white/90 text-emerald-700">Revenue</span>
+            </div>
+            <div class="blog-body">
+              <h3 class="font-bold text-slate-900 mb-2 leading-snug group-hover:text-brand-600 transition-colors">OTA vs Direct Bookings: Finding the Right Balance</h3>
+              <p class="text-slate-500 text-sm">How to reduce OTA dependency while keeping your rooms full year-round.</p>
+            </div>
+          </a>
+          <a href="restaurant-revenue.html" class="card-blog group">
+            <div class="blog-cover bg-gradient-to-br from-amber-500 to-orange-500">
+              <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=600&h=300&fit=crop&q=80" alt="Hotel restaurant bar" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500"/>
+              <span class="blog-tag bg-white/90 text-amber-700">PoS Guides</span>
+            </div>
+            <div class="blog-body">
+              <h3 class="font-bold text-slate-900 mb-2 leading-snug group-hover:text-brand-600 transition-colors">Why Your Hotel Restaurant is Losing Revenue at the Bar</h3>
+              <p class="text-slate-500 text-sm">How inventory leakage and slow checkouts cost you thousands each month.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOFT CTA -->
+    <section class="gradient-brand py-16">
+      <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-bold text-white mb-4">See How Horizon Helps You Price Smarter</h2>
+        <p class="text-white/70 mb-8">Define rate tiers, monitor demand signals, and push rates to all channels with one click. Start your free trial today.</p>
+        <a href="#" class="btn-gold text-base px-8 py-3.5">Start Free Trial, 14 Days Free →</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-brand-950 pt-16 pb-8" aria-label="Site footer">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="bg-brand-900 rounded-2xl p-8 mb-12 flex flex-col md:flex-row items-center gap-6">
+        <div class="flex-1">
+          <h3 class="text-white font-bold text-xl mb-1">Get Weekly Hospitality Insights</h3>
+          <p class="text-slate-400 text-sm">Revenue tips, product updates, and industry trends, every Thursday.</p>
+        </div>
+        <div class="flex gap-2 w-full md:w-auto">
+          <input type="email" placeholder="your@hotel.com" class="form-input-dark flex-1 md:w-64 text-sm px-4 py-3 rounded-lg"/>
+          <button class="btn-brand text-sm px-5 py-3">Subscribe →</button>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+        <div class="col-span-2 md:col-span-1">
+          <a href="../index.html" class="inline-block mb-4">
+            <svg viewBox="0 0 160 32" xmlns="http://www.w3.org/2000/svg" height="28">
+              <defs><linearGradient id="lgf" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#1D4ED8"/><stop offset="100%" style="stop-color:#6366F1"/></linearGradient></defs>
+              <rect x="0" y="2" width="28" height="28" rx="7" fill="url(#lgf)"/>
+              <path d="M6 26 V13 L14 6 L22 13 V26 H19 V16 L14 10.5 L9 16 V26 Z" fill="#fff" opacity="0.95"/>
+              <text x="36" y="22" font-family="Inter,system-ui,sans-serif" font-weight="800" font-size="18" fill="#F1F5F9" letter-spacing="-0.6">megon</text>
+              <text x="97" y="22" font-family="Inter,system-ui,sans-serif" font-weight="400" font-size="18" fill="#94A3B8" letter-spacing="-0.3">tech</text>
+            </svg>
+          </a>
+          <p class="text-slate-400 text-sm mb-4">Powering the future of Indian hospitality.</p>
+          <div class="flex gap-3">
+            <a href="#" class="text-slate-500 hover:text-slate-300 transition-colors" aria-label="LinkedIn"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+            <a href="#" class="text-slate-500 hover:text-slate-300 transition-colors" aria-label="Twitter"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="#" class="text-slate-500 hover:text-slate-300 transition-colors" aria-label="Instagram"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <p class="text-white font-semibold text-sm mb-4">Product</p>
+          <ul class="space-y-2 text-sm text-slate-400">
+            <li><a href="../pms.html" class="hover:text-white transition-colors">PMS</a></li>
+            <li><a href="../pos.html" class="hover:text-white transition-colors">PoS</a></li>
+            <li><a href="../pricing.html" class="hover:text-white transition-colors">Pricing</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-white font-semibold text-sm mb-4">Company</p>
+          <ul class="space-y-2 text-sm text-slate-400">
+            <li><a href="../about.html" class="hover:text-white transition-colors">About Us</a></li>
+            <li><a href="../blog.html" class="hover:text-white transition-colors">Blog</a></li>
+            <li><a href="../contact.html" class="hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-white font-semibold text-sm mb-4">Get Started</p>
+          <ul class="space-y-2 text-sm text-slate-400">
+            <li><a href="../demo.html" class="hover:text-white transition-colors">Book a Demo</a></li>
+            <li><a href="#" class="btn-gold text-xs px-4 py-2 mt-2 inline-block">Start Free Trial →</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
+        <p>© 2026 Megon Technologies India Private Limited</p>
+        <div class="flex items-center gap-4">
+          <a href="../privacy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+          <span class="text-slate-700">·</span>
+          <a href="../terms.html" class="hover:text-white transition-colors">Terms of Service</a>
+          <span class="text-slate-700">·</span>
+          <a href="https://techindika.com" rel="noopener noreferrer" target="_blank" class="hover:text-white transition-colors">Techindika</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js" defer></script>
+</body>
+</html>

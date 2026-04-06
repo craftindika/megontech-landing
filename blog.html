@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hospitality Insights, Revenue, PMS &amp; PoS Tips | megontech Blog</title>
+  <meta name="description" content="Revenue management guides, PMS tips, PoS tutorials, and the future of Indian hospitality. Read expert insights from the megontech team."/>
+  <meta name="keywords" content="hotel revenue management India, hotel PMS tips, hospitality blog India, hotel management tips, RevPAR guide India"/>
+  <meta name="author" content="megontech, Megon Technologies India Private Limited"/>
+  <meta name="robots" content="index, follow"/>
+  <meta name="geo.region" content="IN"/>
+  <link rel="canonical" href="https://megontech.com/blog"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="megontech"/>
+  <meta property="og:title" content="Hospitality Insights, Revenue, PMS &amp; PoS Tips | megontech Blog"/>
+  <meta property="og:description" content="Revenue management guides, PMS tips, PoS tutorials, and the future of Indian hospitality."/>
+  <meta property="og:image" content="https://megontech.com/assets/favicon/og-image.png"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:url" content="https://megontech.com/blog"/>
+  <meta property="og:locale" content="en_IN"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:site" content="@megontech"/>
+  <meta name="twitter:title" content="Hospitality Insights | megontech Blog"/>
+  <meta name="twitter:description" content="Revenue management, PMS tips, and hospitality tech insights for Indian hotel operators."/>
+  <meta name="twitter:image" content="https://megontech.com/assets/favicon/twitter-card.png"/>
+  <link rel="icon" href="/assets/favicon/favicon.svg" type="image/svg+xml"/>
+  <link rel="icon" href="/assets/favicon/favicon.ico" sizes="48x48"/>
+  <link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png"/>
+  <link rel="manifest" href="/assets/favicon/site.webmanifest"/>
+  <meta name="theme-color" content="#0F172A"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: {
+          brand: { 950:'#020617', 900:'#0F172A', 800:'#1E293B', 700:'#1D4ED8', 600:'#2563EB', 500:'#3B82F6', 400:'#60A5FA', 100:'#DBEAFE', 50:'#EFF6FF' },
+          gold:  { 600:'#D97706', 500:'#F59E0B', 400:'#FBBF24', 100:'#FEF3C7' }
+        },
+        fontFamily: { sans: ['Inter','system-ui','sans-serif'], mono: ['JetBrains Mono','monospace'] }
+      }}
+    }
+  </script>
+  <link rel="stylesheet" href="css/custom.css"/>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "megontech Hospitality Insights",
+    "url": "https://megontech.com/blog",
+    "description": "Revenue management guides, PMS tips, PoS tutorials, and the future of Indian hospitality."
+  }
+  </script>
+</head>
+<body class="font-sans bg-white text-slate-900 antialiased">
+
+  <header>
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" aria-label="Main navigation">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-16">
+        <a href="index.html" class="flex items-center" aria-label="megontech home">
+          <svg viewBox="0 0 160 32" xmlns="http://www.w3.org/2000/svg" height="32">
+            <defs><linearGradient id="lg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#1D4ED8"/><stop offset="100%" style="stop-color:#6366F1"/></linearGradient></defs>
+            <rect x="0" y="2" width="28" height="28" rx="7" fill="url(#lg)"/>
+            <path d="M6 26 V13 L14 6 L22 13 V26 H19 V16 L14 10.5 L9 16 V26 Z" fill="#fff" opacity="0.95"/>            <text x="36" y="22" font-family="Inter,system-ui,sans-serif" font-weight="800" font-size="18" fill="#F1F5F9" letter-spacing="-0.6">megon</text>
+            <text x="97" y="22" font-family="Inter,system-ui,sans-serif" font-weight="400" font-size="18" fill="#94A3B8" letter-spacing="-0.3">tech</text>
+          </svg>
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="pms.html" class="text-slate-300 hover:text-white text-sm font-medium transition-colors">PMS</a>
+          <a href="pos.html" class="text-slate-300 hover:text-white text-sm font-medium transition-colors">PoS</a>
+          <a href="pricing.html" class="text-slate-300 hover:text-white text-sm font-medium transition-colors">Pricing</a>
+          <a href="blog.html" class="text-white font-medium text-sm">Blog</a>
+          <a href="about.html" class="text-slate-300 hover:text-white text-sm font-medium transition-colors">About</a>
+          <a href="contact.html" class="text-slate-300 hover:text-white text-sm font-medium transition-colors">Contact</a>
+        </div>
+        <div class="hidden md:flex items-center gap-3">
+          <a href="#" class="btn-ghost-dark text-sm px-5 py-2">Login</a>
+          <a href="#" class="btn-gold text-sm px-5 py-2">Start Free Trial →</a>
+        </div>
+        <button id="mobile-menu-btn" class="md:hidden text-white p-2" aria-label="Toggle mobile menu" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/></svg>
+        </button>
+      </div>
+      <div id="mobile-menu" class="hidden md:hidden bg-brand-900 border-t border-white/10 px-6 py-4">
+        <div class="flex flex-col gap-4">
+          <a href="pms.html" class="text-slate-300 hover:text-white text-sm">PMS</a>
+          <a href="pos.html" class="text-slate-300 hover:text-white text-sm">PoS</a>
+          <a href="pricing.html" class="text-slate-300 hover:text-white text-sm">Pricing</a>
+          <a href="blog.html" class="text-white text-sm font-medium">Blog</a>
+          <a href="about.html" class="text-slate-300 hover:text-white text-sm">About</a>
+          <a href="contact.html" class="text-slate-300 hover:text-white text-sm">Contact</a>
+          <a href="#" class="btn-gold text-sm px-5 py-2 text-center mt-2">Start Free Trial →</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero-sublime-light pt-32 pb-16" aria-label="Blog hero">
+      <!-- Kinetic Sublime Light -->
+      <div class="sublime-mist" aria-hidden="true"></div>
+      <div class="max-w-4xl mx-auto px-6 lg:px-12 text-center relative z-10">
+        <div class="reveal">
+          <span class="label-blue mb-4 inline-block">Hospitality Insights</span>
+          <h1 class="text-5xl font-extrabold text-slate-900 tracking-tight mb-5">Ideas to Run a Better Hotel.</h1>
+          <p class="text-xl text-slate-500 mb-8">Revenue management, tech trends, team tips, and the future of Indian hospitality, straight from the megontech team.</p>
+          <div class="relative max-w-lg mx-auto">
+            <input type="search" placeholder="Search articles..." class="form-input w-full pl-10 pr-4 py-3 rounded-xl text-sm border border-slate-200"/>
+            <svg class="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED ARTICLE -->
+    <section class="bg-white pb-16" aria-label="Featured article">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <article class="bg-brand-50 rounded-2xl overflow-hidden shadow-card reveal">
+          <div class="grid lg:grid-cols-2">
+            <div class="bg-gradient-to-br from-brand-700 to-indigo-600 p-12 flex items-center justify-center min-h-64 relative overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=500&fit=crop&q=80" alt="Hotel lobby" class="absolute inset-0 w-full h-full object-cover opacity-30"/>
+              <div class="text-center relative z-10">
+                <svg class="w-20 h-20 text-white/20 mb-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                <p class="text-white/70 text-sm font-medium">Featured Article</p>
+              </div>
+            </div>
+            <div class="p-10">
+              <span class="inline-block bg-brand-100 text-brand-700 text-xs font-semibold px-3 py-1 rounded-full mb-4">Revenue Management</span>
+              <h2 class="text-2xl font-bold text-slate-900 mb-4 leading-snug">RevPAR, ADR, and Occupancy: The Three Numbers Every Hotel GM Must Own</h2>
+              <p class="text-slate-600 leading-relaxed mb-6">Most hotel owners track occupancy. The great ones track RevPAR. Here's the definitive guide to understanding and improving all three metrics, with practical actions you can take today.</p>
+              <div class="flex items-center gap-3 mb-6">
+                <div class="w-8 h-8 rounded-full gradient-brand flex items-center justify-center text-white text-xs font-bold">AM</div>
+                <div><p class="text-slate-700 text-sm font-medium">Arjun Mehta</p><p class="text-slate-400 text-xs">April 1, 2026 · 8 min read</p></div>
+              </div>
+              <a href="blog/morning-routine.html" class="btn-brand text-sm px-5 py-2.5">Read Article →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CATEGORY TABS -->
+    <section class="bg-white pb-8" aria-label="Blog categories">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="flex flex-wrap gap-2">
+          <button class="tab-btn active text-sm">All</button>
+          <button class="tab-btn text-sm">PMS Tips</button>
+          <button class="tab-btn text-sm">PoS Guides</button>
+          <button class="tab-btn text-sm">Revenue</button>
+          <button class="tab-btn text-sm">Tech &amp; Trends</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARTICLES GRID -->
+    <section class="bg-white py-12" aria-label="Blog articles">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <article class="card-blog reveal-scale stagger-1">
+            <div class="blog-cover bg-gradient-to-br from-brand-700 to-indigo-500">
+              <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&h=300&fit=crop&q=80" alt="Hotel exterior with palm trees" class="absolute inset-0 w-full h-full object-cover" loading="lazy"/>
+              <svg class="w-16 h-16 text-white relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+              <span class="blog-tag bg-white/90 text-brand-700">PMS Tips</span>
+            </div>
+            <div class="blog-body">
+              <h3 class="font-bold text-slate-900 mb-2 leading-snug">The 10-Minute Morning Routine That Keeps Your Front Desk Stress-Free</h3>
+              <p class="text-slate-500 text-sm leading-relaxed mb-4">How the best hotel front desks start every day, and how Horizon PMS makes it effortless.</p>
+              <div class="blog-footer flex items-center justify-between pt-4 border-t border-slate-100">
+                <div class="flex items-center gap-2"><div class="w-6 h-6 rounded-full gradient-brand flex items-center justify-center text-white text-xs font-bold">SK</div><span class="text-slate-400 text-xs">Apr 1 · 5 min</span></div>
+                <a href="blog/morning-routine.html" class="text-brand-600 text-xs font-semibold hover:text-brand-700 flex items-center gap-1">Read <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card-blog reveal-scale stagger-2">
+            <div class="blog-cover bg-gradient-to-br from-amber-500 to-orange-500">
+              <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=600&h=300&fit=crop&q=80" alt="Restaurant bar interior" class="absolute inset-0 w-full h-full object-cover" loading="lazy"/>
+              <svg class="w-16 h-16 text-white relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+              <span class="blog-tag bg-white/90 text-amber-700">PoS Guides</span>
+            </div>
+            <div class="blog-body">
+              <h3 class="font-bold text-slate-900 mb-2 leading-snug">Why Your Hotel Restaurant is Losing Revenue at the Bar (And How to Fix It)</h3>
+              <p class="text-slate-500 text-sm leading-relaxed mb-4">A deep dive into how inventory leakage and slow checkouts cost you thousands each month.</p>
+              <div class="blog-footer flex items-center justify-between pt-4 border-t border-slate-100">
+                <div class="flex items-center gap-2"><div class="w-6 h-6 rounded-full gradient-brand flex items-center justify-center text-white text-xs font-bold">NP</div><span class="text-slate-400 text-xs">Mar 28 · 6 min</span></div>
+                <a href="blog/restaurant-revenue.html" class="text-brand-600 text-xs font-semibold hover:text-brand-700 flex items-center gap-1">Read <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card-blog reveal-scale stagger-3">
+            <div class="blog-cover bg-gradient-to-br from-emerald-500 to-teal-500">
+              <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&h=300&fit=crop&q=80" alt="Elegant hotel room interior" class="absolute inset-0 w-full h-full object-cover" loading="lazy"/>
+              <svg class="w-16 h-16 text-white relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+              <span class="blog-tag bg-white/90 text-emerald-700">Revenue</span>
+            </div>
+            <div class="blog-body">
+              <h3 class="font-bold text-slate-900 mb-2 leading-snug">Dynamic Pricing for Independent Hotels: A Practical Playbook</h3>
+              <p class="text-slate-500 text-sm leading-relaxed mb-4">You don't need to be a chain hotel to use dynamic pricing. Here's how boutique properties are doing it today.</p>
+              <div class="blog-footer flex items-center justify-between pt-4 border-t border-slate-100">
+                <div class="flex items-center gap-2"><div class="w-6 h-6 rounded-full gradient-brand flex items-center justify-center text-white text-xs font-bold">SK</div><span class="text-slate-400 text-xs">Mar 22 · 7 min</span></div>
+                <a href="blog/dynamic-pricing.html" class="text-brand-600 text-xs font-semibold hover:text-brand-700 flex items-center gap-1">Read <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card-blog reveal-scale stagger-4">
+            <div class="blog-cover bg-gradient-to-br from-purple-500 to-pink-500">
+              <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=600&h=300&fit=crop&q=80" alt="Modern hotel with pool" class="absolute inset-0 w-full h-full object-cover" loading="lazy"/>
+              <svg class="w-16 h-16 text-white relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              <span class="blog-tag bg-white/90 text-purple-700">Tech &amp; Trends</span>
+            </div>
+            <div class="blog-body">
+              <h3 class="font-bold text-slate-900 mb-2 leading-snug">The 5 Hotel Tech Trends Defining Indian Hospitality in 2026</h3>
+              <p class="text-slate-500 text-sm leading-relaxed mb-4">From contactless check-in to AI-driven housekeeping schedules, what's actually arriving on the floor.</p>
+              <div class="blog-footer flex items-center justify-between pt-4 border-t border-slate-100">
+                <div class="flex items-center gap-2"><div class="w-6 h-6 rounded-full gradient-brand flex items-center justify-center text-white text-xs font-bold">NP</div><span class="text-slate-400 text-xs">Mar 15 · 9 min</span></div>
+                <a href="blog/tech-trends-2026.html" class="text-brand-600 text-xs font-semibold hover:text-brand-700 flex items-center gap-1">Read <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card-blog reveal-scale stagger-5">
+            <div class="blog-cover bg-gradient-to-br from-brand-600 to-brand-800">
+              <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600&h=300&fit=crop&q=80" alt="Hotel at night with lights" class="absolute inset-0 w-full h-full object-cover" loading="lazy"/>
+              <svg class="w-16 h-16 text-white relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+              <span class="blog-tag bg-white/90 text-brand-700">PMS Tips</span>
+            </div>
+            <div class="blog-body">
+              <h3 class="font-bold text-slate-900 mb-2 leading-snug">How to Run a Perfect Night Audit, Every Night, Without the Stress</h3>
+              <p class="text-slate-500 text-sm leading-relaxed mb-4">Step-by-step: what a clean night audit looks like, and why getting it right protects your revenue.</p>
+              <div class="blog-footer flex items-center justify-between pt-4 border-t border-slate-100">
+                <div class="flex items-center gap-2"><div class="w-6 h-6 rounded-full gradient-brand flex items-center justify-center text-white text-xs font-bold">SK</div><span class="text-slate-400 text-xs">Mar 8 · 4 min</span></div>
+                <a href="blog/night-audit.html" class="text-brand-600 text-xs font-semibold hover:text-brand-700 flex items-center gap-1">Read <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card-blog reveal-scale stagger-6">
+            <div class="blog-cover bg-gradient-to-br from-amber-500 to-amber-600">
+              <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=600&h=300&fit=crop&q=80" alt="Hotel exterior with pool at sunset" class="absolute inset-0 w-full h-full object-cover" loading="lazy"/>
+              <svg class="w-16 h-16 text-white relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span class="blog-tag bg-white/90 text-amber-700">Revenue</span>
+            </div>
+            <div class="blog-body">
+              <h3 class="font-bold text-slate-900 mb-2 leading-snug">OTA vs. Direct Bookings: The Real Cost Calculation Every Hotel Owner Needs</h3>
+              <p class="text-slate-500 text-sm leading-relaxed mb-4">OTA commissions are visible. The hidden costs of direct booking investment are not. We break down both.</p>
+              <div class="blog-footer flex items-center justify-between pt-4 border-t border-slate-100">
+                <div class="flex items-center gap-2"><div class="w-6 h-6 rounded-full gradient-brand flex items-center justify-center text-white text-xs font-bold">NP</div><span class="text-slate-400 text-xs">Mar 1 · 8 min</span></div>
+                <a href="blog/ota-vs-direct.html" class="text-brand-600 text-xs font-semibold hover:text-brand-700 flex items-center gap-1">Read <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER CTA -->
+    <section class="gradient-brand py-20 section-fade-in" style="--fade-from:#FFFFFF" aria-label="Newsletter">
+      <div class="max-w-3xl mx-auto px-6 lg:px-12 text-center reveal">
+        <h2 class="text-4xl font-bold text-white tracking-tight mb-4">Get Hospitality Insights Every Thursday.</h2>
+        <p class="text-xl text-white/70 mb-8">Revenue tips, product news, and stories from the hotel floor, delivered to 3,000+ hoteliers every week.</p>
+        <div class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
+          <input type="email" placeholder="your@hotel.com" class="form-input-dark flex-1 px-4 py-3 rounded-xl text-sm"/>
+          <button class="btn-gold text-sm px-6 py-3 whitespace-nowrap">Subscribe, It's Free →</button>
+        </div>
+        <p class="text-white/40 text-xs mt-4">No spam. Unsubscribe any time. Read by GMs, owners &amp; front desk managers across India.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-brand-950 pt-16 pb-8" aria-label="Site footer">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="bg-brand-900 rounded-2xl p-8 mb-12 flex flex-col md:flex-row items-center gap-6">
+        <div class="flex-1">
+          <h3 class="text-white font-bold text-xl mb-1">Get Weekly Hospitality Insights</h3>
+          <p class="text-slate-400 text-sm">Revenue tips, product updates, and industry trends, every Thursday.</p>
+        </div>
+        <div class="flex gap-2 w-full md:w-auto">
+          <input type="email" placeholder="your@hotel.com" class="form-input-dark flex-1 md:w-64 text-sm px-4 py-3 rounded-lg"/>
+          <button class="btn-brand text-sm px-5 py-3">Subscribe →</button>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+        <div class="col-span-2 md:col-span-1">
+          <a href="index.html" class="inline-block mb-4">
+            <svg viewBox="0 0 160 32" xmlns="http://www.w3.org/2000/svg" height="28">
+              <defs><linearGradient id="lgf" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#1D4ED8"/><stop offset="100%" style="stop-color:#6366F1"/></linearGradient></defs>
+              <rect x="0" y="2" width="28" height="28" rx="7" fill="url(#lgf)"/>
+              <path d="M6 26 V13 L14 6 L22 13 V26 H19 V16 L14 10.5 L9 16 V26 Z" fill="#fff" opacity="0.95"/>
+              <text x="36" y="22" font-family="Inter,system-ui,sans-serif" font-weight="800" font-size="18" fill="#F1F5F9" letter-spacing="-0.6">megon</text>
+              <text x="97" y="22" font-family="Inter,system-ui,sans-serif" font-weight="400" font-size="18" fill="#94A3B8" letter-spacing="-0.3">tech</text>
+            </svg>
+          </a>
+          <p class="text-slate-400 text-sm mb-4">Powering the future of Indian hospitality.</p>
+          <div class="flex gap-3">
+            <a href="#" class="text-slate-500 hover:text-slate-300 transition-colors" aria-label="LinkedIn"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+            <a href="#" class="text-slate-500 hover:text-slate-300 transition-colors" aria-label="Twitter"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="#" class="text-slate-500 hover:text-slate-300 transition-colors" aria-label="Instagram"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <p class="text-white font-semibold text-sm mb-4">Product</p>
+          <ul class="space-y-2 text-sm text-slate-400">
+            <li><a href="pms.html" class="hover:text-white transition-colors">PMS</a></li>
+            <li><a href="pos.html" class="hover:text-white transition-colors">PoS</a></li>
+            <li><a href="pricing.html" class="hover:text-white transition-colors">Pricing</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-white font-semibold text-sm mb-4">Company</p>
+          <ul class="space-y-2 text-sm text-slate-400">
+            <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+            <li><a href="blog.html" class="hover:text-white transition-colors">Blog</a></li>
+            <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-white font-semibold text-sm mb-4">Get Started</p>
+          <ul class="space-y-2 text-sm text-slate-400">
+            <li><a href="demo.html" class="hover:text-white transition-colors">Book a Demo</a></li>
+            <li><a href="#" class="btn-gold text-xs px-4 py-2 mt-2 inline-block">Start Free Trial →</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
+        <p>© 2026 Megon Technologies India Private Limited</p>
+        <div class="flex items-center gap-4">
+          <a href="privacy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+          <span class="text-slate-700">·</span>
+          <a href="terms.html" class="hover:text-white transition-colors">Terms of Service</a>
+          <span class="text-slate-700">·</span>
+          <a href="https://techindika.com" rel="noopener noreferrer" target="_blank" class="hover:text-white transition-colors">Techindika</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

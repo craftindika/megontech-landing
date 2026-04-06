@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hotel Property Management System, Horizon PMS | megontech</title>
+  <meta name="description" content="Manage reservations, check-ins, housekeeping, and guest records in one powerful platform. Horizon PMS is built for Indian hotels. See it live."/>
+  <meta name="keywords" content="hotel PMS software India, property management system, hotel reservation software, front desk PMS, housekeeping management software, hotel check-in system"/>
+  <meta name="author" content="megontech, Megon Technologies India Private Limited"/>
+  <meta name="robots" content="index, follow"/>
+  <meta name="geo.region" content="IN"/>
+  <link rel="canonical" href="https://megontech.com/pms"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="megontech"/>
+  <meta property="og:title" content="Hotel Property Management System, Horizon PMS | megontech"/>
+  <meta property="og:description" content="Manage reservations, check-ins, housekeeping, and guest records in one powerful platform. Horizon PMS is built for Indian hotels."/>
+  <meta property="og:image" content="https://megontech.com/assets/favicon/og-image.png"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:url" content="https://megontech.com/pms"/>
+  <meta property="og:locale" content="en_IN"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:site" content="@megontech"/>
+  <meta name="twitter:title" content="Hotel Property Management System, Horizon PMS | megontech"/>
+  <meta name="twitter:description" content="Manage reservations, check-ins, housekeeping, and guest records in one powerful platform."/>
+  <meta name="twitter:image" content="https://megontech.com/assets/favicon/twitter-card.png"/>
+  <link rel="icon" href="/assets/favicon/favicon.svg" type="image/svg+xml"/>
+  <link rel="icon" href="/assets/favicon/favicon.ico" sizes="48x48"/>
+  <link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png"/>
+  <link rel="manifest" href="/assets/favicon/site.webmanifest"/>
+  <meta name="theme-color" content="#0F172A"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: {
+          brand: { 950:'#020617', 900:'#0F172A', 800:'#1E293B', 700:'#1D4ED8', 600:'#2563EB', 500:'#3B82F6', 400:'#60A5FA', 100:'#DBEAFE', 50:'#EFF6FF' },
+          gold:  { 600:'#D97706', 500:'#F59E0B', 400:'#FBBF24', 100:'#FEF3C7' }
+        },
+        fontFamily: { sans: ['Inter','system-ui','sans-serif'], mono: ['JetBrains Mono','monospace'] }
+      }}
+    }
+  </script>
+  <link rel="stylesheet" href="css/custom.css"/>
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Horizon Property Management System",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web Browser",
+      "description": "Complete hotel property management system for Indian hotels. Reservations, front desk, housekeeping, guest profiles, and rate management.",
+      "featureList": ["Reservation Calendar Management","Check-In and Check-Out Workflow","Housekeeping Management","Guest Profile CRM","Rate and Revenue Management","Multi-Property Support"],
+      "publisher": { "@type": "Organization", "name": "Megon Technologies India Private Limited" }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://megontech.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Hotel PMS", "item": "https://megontech.com/pms" }
+      ]
+    }
+  ]
+  </script>
+</head>
+<body class="font-sans bg-white text-slate-900 antialiased">
+
+  <header>
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" aria-label="Main navigation">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-16">
+        <a href="index.html" class="flex items-center" aria-label="megontech home">
+          <svg viewBox="0 0 160 32" xmlns="http://www.w3.org/2000/svg" height="32">
+            <defs><linearGradient id="lg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#1D4ED8"/><stop offset="100%" style="stop-color:#6366F1"/></linearGradient></defs>
+            <rect x="0" y="2" width="28" height="28" rx="7" fill="url(#lg)"/>
+            <path d="M6 26 V13 L14 6 L22 13 V26 H19 V16 L14 10.5 L9 16 V26 Z" fill="#fff" opacity="0.95"/>            <text x="36" y="22" font-family="Inter,system-ui,sans-serif" font-weight="800" font-size="18" fill="#F1F5F9" letter-spacing="-0.6">megon</text>
+            <text x="97" y="22" font-family="Inter,system-ui,sans-serif" font-weight="400" font-size="18" fill="#94A3B8" letter-spacing="-0.3">tech</text>
+          </svg>
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="pms.html" class="text-white font-medium text-sm">PMS</a>
+          <a href="pos.html" class="text-slate-300 hover:text-white text-sm font-medium transition-colors">PoS</a>
+          <a href="pricing.html" class="text-slate-300 hover:text-white text-sm font-medium transition-colors">Pricing</a>
+          <a href="blog.html" class="text-slate-300 hover:text-white text-sm font-medium transition-colors">Blog</a>
+          <a href="about.html" class="text-slate-300 hover:text-white text-sm font-medium transition-colors">About</a>
+          <a href="contact.html" class="text-slate-300 hover:text-white text-sm font-medium transition-colors">Contact</a>
+        </div>
+        <div class="hidden md:flex items-center gap-3">
+          <a href="#" class="btn-ghost-dark text-sm px-5 py-2">Login</a>
+          <a href="#" class="btn-gold text-sm px-5 py-2">Start Free Trial →</a>
+        </div>
+        <button id="mobile-menu-btn" class="md:hidden text-white p-2" aria-label="Toggle mobile menu" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/></svg>
+        </button>
+      </div>
+      <div id="mobile-menu" class="hidden md:hidden bg-brand-900 border-t border-white/10 px-6 py-4">
+        <div class="flex flex-col gap-4">
+          <a href="pms.html" class="text-white text-sm font-medium">PMS</a>
+          <a href="pos.html" class="text-slate-300 hover:text-white text-sm font-medium">PoS</a>
+          <a href="pricing.html" class="text-slate-300 hover:text-white text-sm font-medium">Pricing</a>
+          <a href="blog.html" class="text-slate-300 hover:text-white text-sm font-medium">Blog</a>
+          <a href="about.html" class="text-slate-300 hover:text-white text-sm font-medium">About</a>
+          <a href="contact.html" class="text-slate-300 hover:text-white text-sm font-medium">Contact</a>
+          <div class="flex flex-col gap-2 pt-2 border-t border-white/10">
+            <a href="#" class="btn-ghost-dark text-sm px-5 py-2 text-center">Login</a>
+            <a href="#" class="btn-gold text-sm px-5 py-2 text-center">Start Free Trial →</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero-sublime-inner pt-32 pb-24" aria-label="PMS hero">
+      <!-- Kinetic Sublime -->
+      <div class="sublime-drift" aria-hidden="true"></div>
+      <div class="sublime-pulse" aria-hidden="true"></div>
+      <div class="sublime-grain" aria-hidden="true"></div>
+      <div class="sublime-horizon" aria-hidden="true"></div>
+      <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center">
+        <div class="reveal">
+          <span class="label-gold mb-6 inline-block">Property Management System</span>
+          <h1 class="text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-6">The Command Center<br/>for Your Entire Hotel.</h1>
+          <p class="text-xl text-slate-400 max-w-2xl mx-auto mb-10">Horizon PMS is the single source of truth for your property, from the moment a guest books to the moment they check out, and everything in between.</p>
+          <div class="flex flex-wrap justify-center gap-4 mb-10">
+            <a href="#" class="btn-brand text-base px-7 py-3.5">Start Free Trial, 14 Days Free →</a>
+            <a href="#" class="btn-ghost-dark text-base px-7 py-3.5">Watch 2-Min Overview</a>
+          </div>
+          <div class="flex flex-wrap justify-center gap-8 text-sm text-slate-400">
+            <span>🏨 200+ Hotels</span>
+            <span>✅ 99.9% Uptime</span>
+            <span>⚡ Live in Under 24 Hours</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-glow-divider"></div>
+
+    <!-- FEATURE GRID -->
+    <section class="bg-brand-50 py-24 section-fade-in" style="--fade-from:#020617" aria-label="PMS features">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="text-center mb-16 reveal">
+          <span class="label-blue mb-4 inline-block">Everything Your Property Needs</span>
+          <h2 class="text-5xl font-bold text-slate-900 tracking-tight">Every Function. One Roof.</h2>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="card-feature p-7 reveal-scale stagger-1">
+            <div class="w-11 h-11 rounded-xl gradient-brand flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            </div>
+            <h3 class="font-semibold text-slate-900 mb-2">Reservation Management</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">Visual availability calendar, OTA sync, group bookings, and waitlists, all in one frictionless view.</p>
+          </div>
+          <div class="card-feature p-7 reveal-scale stagger-2">
+            <div class="w-11 h-11 rounded-xl gradient-brand flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </div>
+            <h3 class="font-semibold text-slate-900 mb-2">Front Desk Operations</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">Arrivals, departures, room assignments, early check-ins, your front desk, elevated.</p>
+          </div>
+          <div class="card-feature p-7 reveal-scale stagger-3">
+            <div class="w-11 h-11 rounded-xl gradient-brand flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+            </div>
+            <h3 class="font-semibold text-slate-900 mb-2">Housekeeping Tracker</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">Assign tasks, track room status live, log maintenance issues. Always know the state of every room.</p>
+          </div>
+          <div class="card-feature p-7 reveal-scale stagger-4">
+            <div class="w-11 h-11 rounded-xl gradient-brand flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <h3 class="font-semibold text-slate-900 mb-2">Guest Profiles &amp; CRM</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">Every guest's preferences, history, and notes, surfaced automatically at check-in.</p>
+          </div>
+          <div class="card-feature p-7 reveal-scale stagger-5">
+            <div class="w-11 h-11 rounded-xl gradient-brand flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/></svg>
+            </div>
+            <h3 class="font-semibold text-slate-900 mb-2">Rate &amp; Revenue Management</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">Set seasonal pricing, weekend rates, promotional packages, and OTA channel rates with ease.</p>
+          </div>
+          <div class="card-feature p-7 reveal-scale stagger-6">
+            <div class="w-11 h-11 rounded-xl gradient-brand flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+            </div>
+            <h3 class="font-semibold text-slate-900 mb-2">Multi-Property Support</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">Manage multiple hotels, branches, or outlets from a single unified Horizon account.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESERVATION DEEP DIVE -->
+    <section class="bg-white py-24 section-fade-out" style="--fade-to:#0F172A" aria-label="Reservation management">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div class="reveal-left">
+            <div class="card-dark rounded-2xl p-6">
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-white font-semibold">Reservation Calendar, April 2026</span>
+                <span class="text-xs text-emerald-400 flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-emerald-400 inline-block animate-pulse-dot"></span> Live</span>
+              </div>
+              <div class="grid grid-cols-8 gap-1 text-xs">
+                <div class="text-slate-500 p-1">Room</div>
+                <div class="text-slate-500 p-1 text-center">1</div>
+                <div class="text-slate-500 p-1 text-center">2</div>
+                <div class="text-slate-500 p-1 text-center">3</div>
+                <div class="text-slate-500 p-1 text-center">4</div>
+                <div class="text-slate-500 p-1 text-center">5</div>
+                <div class="text-slate-500 p-1 text-center">6</div>
+                <div class="text-slate-500 p-1 text-center">7</div>
+
+                <div class="text-white p-1 font-medium">101</div>
+                <div class="col-span-3 bg-brand-700 rounded text-white p-1 text-center">Sharma</div>
+                <div class="col-span-2 bg-slate-700 rounded text-slate-400 p-1 text-center">—</div>
+                <div class="col-span-2 bg-emerald-700/60 rounded text-white p-1 text-center">OTA</div>
+
+                <div class="text-white p-1 font-medium">102</div>
+                <div class="bg-slate-700 rounded text-slate-400 p-1 text-center">—</div>
+                <div class="col-span-4 bg-brand-600 rounded text-white p-1 text-center">Nair Family</div>
+                <div class="col-span-2 bg-slate-700 rounded text-slate-400 p-1 text-center">—</div>
+
+                <div class="text-white p-1 font-medium">201</div>
+                <div class="col-span-2 bg-emerald-700/60 rounded text-white p-1 text-center">Mehta</div>
+                <div class="col-span-5 bg-slate-700 rounded text-slate-400 p-1 text-center">Available</div>
+
+                <div class="text-white p-1 font-medium">301</div>
+                <div class="col-span-5 bg-brand-600 rounded text-white p-1 text-center">Corporate Booking, TechCorp Ltd</div>
+                <div class="col-span-2 bg-amber-700/60 rounded text-white p-1 text-center">Hold</div>
+              </div>
+              <div class="flex gap-3 mt-4 text-xs">
+                <span class="flex items-center gap-1"><span class="w-3 h-3 rounded bg-brand-600 inline-block"></span> Confirmed</span>
+                <span class="flex items-center gap-1"><span class="w-3 h-3 rounded bg-emerald-700/60 inline-block"></span> OTA</span>
+                <span class="flex items-center gap-1"><span class="w-3 h-3 rounded bg-amber-700/60 inline-block"></span> Tentative</span>
+              </div>
+            </div>
+          </div>
+          <div class="reveal-right">
+            <span class="label-blue mb-4 inline-block">Reservation Management</span>
+            <h2 class="text-4xl font-bold text-slate-900 tracking-tight mb-5">Every Booking. Always Under Control.</h2>
+            <p class="text-lg text-slate-600 leading-relaxed mb-7">Your reservation calendar isn't just a grid, it's the heartbeat of your hotel. Horizon gives you a live, colour-coded view of every room, every night, every status. Modify, cancel, or move bookings in seconds. No training manual required.</p>
+            <ul class="space-y-3">
+              <li class="flex gap-3 text-sm"><span class="text-brand-600 font-bold mt-0.5">✓</span><span class="text-slate-700">Colour-coded room grid with live availability</span></li>
+              <li class="flex gap-3 text-sm"><span class="text-brand-600 font-bold mt-0.5">✓</span><span class="text-slate-700">Direct bookings, walk-ins &amp; OTA imports</span></li>
+              <li class="flex gap-3 text-sm"><span class="text-brand-600 font-bold mt-0.5">✓</span><span class="text-slate-700">Group &amp; corporate booking management</span></li>
+              <li class="flex gap-3 text-sm"><span class="text-brand-600 font-bold mt-0.5">✓</span><span class="text-slate-700">Instant booking confirmation emails</span></li>
+              <li class="flex gap-3 text-sm"><span class="text-brand-600 font-bold mt-0.5">✓</span><span class="text-slate-700">Flexible cancellation &amp; amendment workflows</span></li>
+              <li class="flex gap-3 text-sm"><span class="text-brand-600 font-bold mt-0.5">✓</span><span class="text-slate-700">Waitlist management for peak periods</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHECK-IN & CHECK-OUT WORKFLOW -->
+    <section class="gradient-dark-section py-24 relative overflow-hidden" aria-label="Check-in workflow">
+      <div class="sublime-drift" aria-hidden="true"></div>
+      <div class="sublime-grain" aria-hidden="true"></div>
+
+      <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+        <div class="text-center mb-16 reveal">
+          <span class="label-dark mb-4 inline-block">Check-In &amp; Check-Out</span>
+          <h2 class="text-4xl lg:text-5xl font-bold text-white tracking-tight mb-5">90 Seconds. That's All It Takes.</h2>
+          <p class="text-xl text-slate-400 max-w-2xl mx-auto">From the moment your guest walks in to the moment they have their key, Horizon handles every step in under 90 seconds.</p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12 items-start">
+
+          <!-- LEFT: Timeline steps -->
+          <div class="space-y-0 reveal-left">
+            <!-- Step 1 -->
+            <div class="flex gap-5">
+              <div class="flex flex-col items-center">
+                <div class="w-11 h-11 rounded-full bg-brand-600 flex items-center justify-center text-white font-bold text-sm shadow-brand flex-shrink-0">1</div>
+                <div class="w-0.5 flex-1 bg-gradient-to-b from-brand-600 to-brand-400 my-1"></div>
+              </div>
+              <div class="pb-8">
+                <h4 class="font-semibold text-white text-lg mb-1">Guest Arrives</h4>
+                <p class="text-slate-400 text-sm leading-relaxed">Pull up the reservation in one tap. Name, room type, special requests, all visible instantly. No searching, no asking the guest to repeat themselves.</p>
+              </div>
+            </div>
+            <!-- Step 2 -->
+            <div class="flex gap-5">
+              <div class="flex flex-col items-center">
+                <div class="w-11 h-11 rounded-full bg-brand-600 flex items-center justify-center text-white font-bold text-sm shadow-brand flex-shrink-0">2</div>
+                <div class="w-0.5 flex-1 bg-gradient-to-b from-brand-400 to-indigo-500 my-1"></div>
+              </div>
+              <div class="pb-8">
+                <h4 class="font-semibold text-white text-lg mb-1">ID Verified</h4>
+                <p class="text-slate-400 text-sm leading-relaxed">Scan or upload the ID. Nationality, document number, and photo, captured in a single screen. Fully compliant with local regulations.</p>
+              </div>
+            </div>
+            <!-- Step 3 -->
+            <div class="flex gap-5">
+              <div class="flex flex-col items-center">
+                <div class="w-11 h-11 rounded-full bg-indigo-500 flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-indigo-500/30 flex-shrink-0">3</div>
+                <div class="w-0.5 flex-1 bg-gradient-to-b from-indigo-500 to-emerald-500 my-1"></div>
+              </div>
+              <div class="pb-8">
+                <h4 class="font-semibold text-white text-lg mb-1">Room Assigned</h4>
+                <p class="text-slate-400 text-sm leading-relaxed">Horizon suggests the best available room based on guest preferences, floor, view, and housekeeping status. One click to confirm.</p>
+              </div>
+            </div>
+            <!-- Step 4 -->
+            <div class="flex gap-5">
+              <div class="flex flex-col items-center">
+                <div class="w-11 h-11 rounded-full bg-emerald-500 flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-emerald-500/30 flex-shrink-0">4</div>
+                <div class="w-0.5 flex-1 bg-gradient-to-b from-emerald-500 to-amber-500 my-1"></div>
+              </div>
+              <div class="pb-8">
+                <h4 class="font-semibold text-white text-lg mb-1">Key Issued</h4>
+                <p class="text-slate-400 text-sm leading-relaxed">Key card encoded or digital key sent. Housekeeping is auto-notified. The guest is on their way, smiling.</p>
+              </div>
+            </div>
+            <!-- Step 5 -->
+            <div class="flex gap-5">
+              <div class="flex flex-col items-center">
+                <div class="w-11 h-11 rounded-full bg-gradient-to-br from-amber-500 to-amber-400 flex items-center justify-center text-brand-900 font-bold text-sm shadow-lg shadow-amber-500/30 flex-shrink-0">5</div>
+              </div>
+              <div>
+                <h4 class="font-semibold text-white text-lg mb-1">Folio &amp; Check-Out</h4>
+                <p class="text-slate-400 text-sm leading-relaxed">Auto-generated folio with every charge. Guest reviews, settles (cash, card, UPI), and receives a digital receipt. Under 60 seconds.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: Live mockup of check-in screen -->
+          <div class="reveal-right">
+            <div class="card-dark rounded-2xl overflow-hidden shadow-dark">
+              <!-- Titlebar -->
+              <div class="bg-brand-800 px-5 py-3 flex items-center justify-between border-b border-white/5">
+                <div class="flex items-center gap-2">
+                  <div class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse-dot"></div>
+                  <span class="text-xs text-slate-400 font-medium">Live Check-In, Front Desk 1</span>
+                </div>
+                <span class="text-xs text-slate-500">12:34 PM</span>
+              </div>
+              <!-- Guest info -->
+              <div class="p-5">
+                <div class="flex items-center gap-4 mb-5">
+                  <div class="w-12 h-12 rounded-full bg-gradient-to-br from-brand-600 to-indigo-500 flex items-center justify-center text-white font-bold text-sm">AS</div>
+                  <div>
+                    <p class="text-white font-semibold">Ananya Singh</p>
+                    <p class="text-slate-500 text-xs">Booking #HRZ-4821 · 2 Nights · Deluxe King</p>
+                  </div>
+                  <div class="ml-auto">
+                    <span class="text-xs bg-emerald-500/15 text-emerald-400 border border-emerald-500/25 px-2.5 py-1 rounded-full font-semibold">Confirmed</span>
+                  </div>
+                </div>
+
+                <!-- Progress bar -->
+                <div class="flex items-center gap-2 mb-5">
+                  <div class="flex-1 h-1.5 rounded-full bg-brand-800 overflow-hidden">
+                    <div class="h-full rounded-full bg-gradient-to-r from-brand-600 via-indigo-500 to-emerald-500" style="width:60%"></div>
+                  </div>
+                  <span class="text-xs text-slate-500 font-medium">Step 3 of 5</span>
+                </div>
+
+                <!-- Room assignment card -->
+                <div class="bg-brand-800/80 rounded-xl p-4 mb-4 border border-white/5">
+                  <p class="text-xs text-slate-500 uppercase tracking-wider font-semibold mb-3">Room Assignment</p>
+                  <div class="grid grid-cols-3 gap-2">
+                    <div class="bg-brand-900 rounded-lg p-3 border border-white/5 text-center">
+                      <p class="text-white font-bold text-sm">302</p>
+                      <p class="text-slate-500 text-xs">Deluxe King</p>
+                      <p class="text-emerald-400 text-xs mt-1">Available</p>
+                    </div>
+                    <div class="bg-brand-700/50 rounded-lg p-3 border-2 border-brand-500 text-center ring-2 ring-brand-500/20">
+                      <p class="text-white font-bold text-sm">305</p>
+                      <p class="text-slate-400 text-xs">Deluxe King</p>
+                      <p class="text-brand-400 text-xs mt-1 font-semibold">Suggested</p>
+                    </div>
+                    <div class="bg-brand-900 rounded-lg p-3 border border-white/5 text-center">
+                      <p class="text-white font-bold text-sm">308</p>
+                      <p class="text-slate-500 text-xs">Deluxe Twin</p>
+                      <p class="text-emerald-400 text-xs mt-1">Available</p>
+                    </div>
+                  </div>
+                  <p class="text-xs text-slate-500 mt-3 flex items-center gap-1.5">
+                    <svg class="w-3.5 h-3.5 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    Room 305 matches guest preference: high floor, pool view
+                  </p>
+                </div>
+
+                <!-- Action buttons -->
+                <div class="flex gap-3">
+                  <button class="flex-1 bg-gradient-to-r from-brand-600 to-indigo-500 text-white text-sm font-semibold py-3 rounded-xl shadow-brand transition-all hover:shadow-brand-lg hover:-translate-y-0.5">Assign Room 305 →</button>
+                  <button class="bg-brand-800 text-slate-400 text-sm font-medium py-3 px-4 rounded-xl border border-white/8 hover:bg-brand-700 transition-colors">Skip</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bottom stats -->
+            <div class="grid grid-cols-3 gap-3 mt-4">
+              <div class="card-glass rounded-xl p-3 text-center">
+                <p class="text-2xl font-extrabold text-white">90s</p>
+                <p class="text-xs text-slate-500">Avg. Check-In</p>
+              </div>
+              <div class="card-glass rounded-xl p-3 text-center">
+                <p class="text-2xl font-extrabold text-white">0</p>
+                <p class="text-xs text-slate-500">Errors Today</p>
+              </div>
+              <div class="card-glass rounded-xl p-3 text-center">
+                <p class="text-2xl font-extrabold text-white">12</p>
+                <p class="text-xs text-slate-500">Check-Ins Today</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- HOUSEKEEPING -->
+    <section class="bg-white py-24 section-fade-in section-fade-out" style="--fade-from:#0F172A;--fade-to:#0F172A" aria-label="Housekeeping">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div class="reveal-left">
+            <span class="label-blue mb-4 inline-block">Housekeeping Management</span>
+            <h2 class="text-4xl font-bold text-slate-900 tracking-tight mb-5">A Clean Room is a Happy Guest.</h2>
+            <p class="text-lg text-slate-600 leading-relaxed mb-7">Horizon's housekeeping board gives your team clarity, speed, and accountability. No walkie-talkies. No sticky notes. Just real-time task assignments and live room status updates, accessible from any device.</p>
+            <ul class="space-y-3">
+              <li class="flex gap-3 text-sm text-slate-700"><span class="text-brand-600">→</span> Assign rooms to housekeepers by floor or zone</li>
+              <li class="flex gap-3 text-sm text-slate-700"><span class="text-brand-600">→</span> Mark rooms: Clean / Dirty / In-Progress / Inspect</li>
+              <li class="flex gap-3 text-sm text-slate-700"><span class="text-brand-600">→</span> Log maintenance issues with photos</li>
+              <li class="flex gap-3 text-sm text-slate-700"><span class="text-brand-600">→</span> Supervisors approve inspections before check-in</li>
+              <li class="flex gap-3 text-sm text-slate-700"><span class="text-brand-600">→</span> Auto-notify front desk when room is cleared</li>
+            </ul>
+          </div>
+          <div class="reveal-right">
+            <div class="card-dark rounded-2xl p-6">
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-white font-semibold text-sm">Housekeeping Board, Floor 3</span>
+                <span class="text-xs text-slate-400">12 Rooms</span>
+              </div>
+              <div class="space-y-2">
+                <div class="flex items-center justify-between bg-brand-800 rounded-lg px-3 py-2.5">
+                  <div class="flex items-center gap-3"><span class="text-sm text-white font-medium">301</span><span class="text-xs text-slate-400">Assigned to Sunita</span></div>
+                  <span class="text-xs bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded-full">✓ Clean</span>
+                </div>
+                <div class="flex items-center justify-between bg-brand-800 rounded-lg px-3 py-2.5">
+                  <div class="flex items-center gap-3"><span class="text-sm text-white font-medium">302</span><span class="text-xs text-slate-400">Assigned to Rekha</span></div>
+                  <span class="text-xs bg-brand-500/20 text-brand-400 px-2 py-0.5 rounded-full">In Progress</span>
+                </div>
+                <div class="flex items-center justify-between bg-brand-800 rounded-lg px-3 py-2.5">
+                  <div class="flex items-center gap-3"><span class="text-sm text-white font-medium">303</span><span class="text-xs text-slate-400">Checked Out 10:30</span></div>
+                  <span class="text-xs bg-red-500/20 text-red-400 px-2 py-0.5 rounded-full">Dirty</span>
+                </div>
+                <div class="flex items-center justify-between bg-brand-800 rounded-lg px-3 py-2.5">
+                  <div class="flex items-center gap-3"><span class="text-sm text-white font-medium">304</span><span class="text-xs text-slate-400">Supervisor Review</span></div>
+                  <span class="text-xs bg-amber-500/20 text-amber-400 px-2 py-0.5 rounded-full">Inspect</span>
+                </div>
+                <div class="flex items-center justify-between bg-brand-800 rounded-lg px-3 py-2.5">
+                  <div class="flex items-center gap-3"><span class="text-sm text-white font-medium">305</span><span class="text-xs text-slate-400">AC not cooling</span></div>
+                  <span class="text-xs bg-red-500/20 text-red-400 px-2 py-0.5 rounded-full">Maintenance</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REPORTS DARK -->
+    <section class="gradient-dark-section py-24" aria-label="Reporting">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center reveal">
+        <span class="label-dark mb-4 inline-block">Reporting &amp; Analytics</span>
+        <h2 class="text-4xl font-bold text-white tracking-tight mb-6">Data That Drives Better Decisions.</h2>
+        <p class="text-xl text-slate-400 max-w-2xl mx-auto mb-10">Horizon's reporting suite gives you the exact numbers you need, when you need them. Daily summaries, shift reports, occupancy trends, revenue by channel, and more. All exportable. All instant.</p>
+        <div class="flex flex-wrap justify-center gap-8 text-sm text-slate-400">
+          <span class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center">
+              <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+            </div>
+            Occupancy Rate (Live)
+          </span>
+          <span class="hidden md:block w-px h-6 bg-white/20"></span>
+          <span class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center">
+              <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+            </div>
+            RevPAR &amp; ADR Tracking
+          </span>
+          <span class="hidden md:block w-px h-6 bg-white/20"></span>
+          <span class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center">
+              <svg class="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            </div>
+            Automated Night Audit
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTEGRATIONS -->
+    <section class="bg-brand-50 py-24 section-fade-in section-fade-out" style="--fade-from:#0F172A;--fade-to:#0F172A" aria-label="Integrations">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="text-center mb-12 reveal">
+          <span class="label-blue mb-4 inline-block">Integrations</span>
+          <h2 class="text-4xl font-bold text-slate-900 tracking-tight mb-5">Works Perfectly with the Tools You Already Use.</h2>
+          <p class="text-xl text-slate-500 max-w-2xl mx-auto">Horizon connects with leading payment gateways, OTA channels, accounting tools, and door lock systems, so your entire tech stack works as one seamless operation.</p>
+        </div>
+        <div class="grid md:grid-cols-4 gap-4">
+          <div class="bg-white rounded-xl p-5 text-center shadow-card reveal-scale stagger-1">
+            <p class="text-xs text-slate-400 uppercase tracking-wide mb-3 font-medium">Payments</p>
+            <div class="space-y-2 text-sm text-slate-700">
+              <p class="font-medium">Razorpay</p><p class="font-medium">PayU</p><p class="font-medium">Stripe</p><p class="font-medium">Pine Labs</p>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-5 text-center shadow-card reveal-scale stagger-2">
+            <p class="text-xs text-slate-400 uppercase tracking-wide mb-3 font-medium">OTA Channels</p>
+            <div class="space-y-2 text-sm text-slate-700">
+              <p class="font-medium">Booking.com</p><p class="font-medium">MakeMyTrip</p><p class="font-medium">Expedia</p><p class="font-medium">Agoda</p>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-5 text-center shadow-card reveal-scale stagger-3">
+            <p class="text-xs text-slate-400 uppercase tracking-wide mb-3 font-medium">Accounting</p>
+            <div class="space-y-2 text-sm text-slate-700">
+              <p class="font-medium">Tally</p><p class="font-medium">Zoho Books</p><p class="font-medium">QuickBooks</p>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-5 text-center shadow-card reveal-scale stagger-4">
+            <p class="text-xs text-slate-400 uppercase tracking-wide mb-3 font-medium">Door Locks</p>
+            <div class="space-y-2 text-sm text-slate-700">
+              <p class="font-medium">Salto</p><p class="font-medium">ASSA ABLOY</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEMO CTA -->
+    <section class="gradient-hero py-24" aria-label="PMS demo CTA">
+      <div class="max-w-4xl mx-auto px-6 lg:px-12 text-center reveal-scale">
+        <h2 class="text-4xl font-bold text-white tracking-tight mb-5">See What Horizon PMS Can Do for You.</h2>
+        <p class="text-xl text-slate-400 mb-8">Our product specialists will walk you through the complete Horizon PMS experience, tailored to your property type.</p>
+        <a href="#" class="btn-gold text-base px-8 py-4">Start Free Trial, 14 Days Free →</a>
+        <a href="#" class="btn-ghost-dark text-base px-8 py-4">Watch 2-Min Overview</a>
+        <p class="text-sm text-slate-500 mt-4">No credit card · No obligation · Onboarding support included</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-brand-950 pt-16 pb-8" aria-label="Site footer">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="bg-brand-900 rounded-2xl p-8 mb-12 flex flex-col md:flex-row items-center gap-6">
+        <div class="flex-1">
+          <h3 class="text-white font-bold text-xl mb-1">Get Weekly Hospitality Insights</h3>
+          <p class="text-slate-400 text-sm">Revenue tips, product updates, and industry trends, every Thursday.</p>
+        </div>
+        <div class="flex gap-2 w-full md:w-auto">
+          <input type="email" placeholder="your@hotel.com" class="form-input-dark flex-1 md:w-64 text-sm px-4 py-3 rounded-lg"/>
+          <button class="btn-brand text-sm px-5 py-3">Subscribe →</button>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+        <div class="col-span-2 md:col-span-1">
+          <a href="index.html" class="inline-block mb-4">
+            <svg viewBox="0 0 160 32" xmlns="http://www.w3.org/2000/svg" height="28">
+              <defs><linearGradient id="lgf" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#1D4ED8"/><stop offset="100%" style="stop-color:#6366F1"/></linearGradient></defs>
+              <rect x="0" y="2" width="28" height="28" rx="7" fill="url(#lgf)"/>
+              <path d="M6 26 V13 L14 6 L22 13 V26 H19 V16 L14 10.5 L9 16 V26 Z" fill="#fff" opacity="0.95"/>
+              <text x="36" y="22" font-family="Inter,system-ui,sans-serif" font-weight="800" font-size="18" fill="#F1F5F9" letter-spacing="-0.6">megon</text>
+              <text x="97" y="22" font-family="Inter,system-ui,sans-serif" font-weight="400" font-size="18" fill="#94A3B8" letter-spacing="-0.3">tech</text>
+            </svg>
+          </a>
+          <p class="text-slate-400 text-sm mb-4">Powering the future of Indian hospitality.</p>
+          <div class="flex gap-3">
+            <a href="#" class="text-slate-500 hover:text-slate-300 transition-colors" aria-label="LinkedIn"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+            <a href="#" class="text-slate-500 hover:text-slate-300 transition-colors" aria-label="Twitter"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="#" class="text-slate-500 hover:text-slate-300 transition-colors" aria-label="Instagram"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <p class="text-white font-semibold text-sm mb-4">Product</p>
+          <ul class="space-y-2 text-sm text-slate-400">
+            <li><a href="pms.html" class="hover:text-white transition-colors">PMS</a></li>
+            <li><a href="pos.html" class="hover:text-white transition-colors">PoS</a></li>
+            <li><a href="pricing.html" class="hover:text-white transition-colors">Pricing</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-white font-semibold text-sm mb-4">Company</p>
+          <ul class="space-y-2 text-sm text-slate-400">
+            <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+            <li><a href="blog.html" class="hover:text-white transition-colors">Blog</a></li>
+            <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-white font-semibold text-sm mb-4">Get Started</p>
+          <ul class="space-y-2 text-sm text-slate-400">
+            <li><a href="demo.html" class="hover:text-white transition-colors">Book a Demo</a></li>
+            <li><a href="#" class="btn-gold text-xs px-4 py-2 mt-2 inline-block">Start Free Trial →</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
+        <p>© 2026 Megon Technologies India Private Limited</p>
+        <div class="flex items-center gap-4">
+          <a href="privacy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+          <span class="text-slate-700">·</span>
+          <a href="terms.html" class="hover:text-white transition-colors">Terms of Service</a>
+          <span class="text-slate-700">·</span>
+          <a href="https://techindika.com" rel="noopener noreferrer" target="_blank" class="hover:text-white transition-colors">Techindika</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

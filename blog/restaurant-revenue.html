@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Why Your Hotel Restaurant is Losing Revenue at the Bar (And How to Fix It) | megontech Blog</title>
+  <meta name="description" content="Discover the hidden revenue leaks in your hotel F&B operations — from inventory shrinkage to unposted room charges — and how a modern PoS system eliminates them."/>
+  <meta name="author" content="Nripendra Nath Puzari"/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://megontech.com/blog/restaurant-revenue"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:title" content="Why Your Hotel Restaurant is Losing Revenue at the Bar (And How to Fix It)"/>
+  <meta property="og:description" content="Discover the hidden revenue leaks in your hotel F&B operations and how to fix them."/>
+  <meta property="og:image" content="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1200&q=80"/>
+  <meta property="og:url" content="https://megontech.com/blog/restaurant-revenue"/>
+  <meta property="og:locale" content="en_IN"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Why Your Hotel Restaurant is Losing Revenue at the Bar (And How to Fix It)"/>
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1200&q=80"/>
+  <link rel="icon" href="/assets/favicon/favicon.svg" type="image/svg+xml"/>
+  <link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png"/>
+  <meta name="theme-color" content="#0F172A"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: {
+          brand: { 950:'#020617', 900:'#0F172A', 800:'#1E293B', 700:'#1D4ED8', 600:'#2563EB', 500:'#3B82F6', 400:'#60A5FA', 100:'#DBEAFE', 50:'#EFF6FF' },
+          gold:  { 600:'#D97706', 500:'#F59E0B', 400:'#FBBF24', 100:'#FEF3C7' }
+        },
+        fontFamily: { sans: ['Inter','system-ui','sans-serif'], mono: ['JetBrains Mono','monospace'] }
+      }}
+    }
+  </script>
+  <link rel="stylesheet" href="../css/custom.css"/>
+</head>
+<body class="font-sans bg-white text-slate-900 antialiased">
+
+  <!-- NAVBAR -->
+  <header>
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" aria-label="Main navigation">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-16">
+        <a href="../index.html" class="flex items-center" aria-label="megontech home">
+          <svg viewBox="0 0 160 32" xmlns="http://www.w3.org/2000/svg" height="32" aria-hidden="true">
+            <defs><linearGradient id="lg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#1D4ED8"/><stop offset="100%" style="stop-color:#6366F1"/></linearGradient></defs>
+            <rect x="0" y="2" width="28" height="28" rx="7" fill="url(#lg)"/>
+            <path d="M6 26 V13 L14 6 L22 13 V26 H19 V16 L14 10.5 L9 16 V26 Z" fill="#fff" opacity="0.95"/>
+            <text x="36" y="22" font-family="Inter,system-ui,sans-serif" font-weight="800" font-size="18" fill="#F1F5F9" letter-spacing="-0.6">megon</text>
+            <text x="97" y="22" font-family="Inter,system-ui,sans-serif" font-weight="400" font-size="18" fill="#94A3B8" letter-spacing="-0.3">tech</text>
+          </svg>
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="../pms.html" class="text-slate-300 hover:text-white text-sm font-medium transition-colors">PMS</a>
+          <a href="../pos.html" class="text-slate-300 hover:text-white text-sm font-medium transition-colors">PoS</a>
+          <a href="../pricing.html" class="text-slate-300 hover:text-white text-sm font-medium transition-colors">Pricing</a>
+          <a href="../blog.html" class="text-white font-medium text-sm">Blog</a>
+          <a href="../about.html" class="text-slate-300 hover:text-white text-sm font-medium transition-colors">About</a>
+          <a href="../contact.html" class="text-slate-300 hover:text-white text-sm font-medium transition-colors">Contact</a>
+        </div>
+        <div class="hidden md:flex items-center gap-3">
+          <a href="#" class="btn-ghost-dark text-sm px-5 py-2">Login</a>
+          <a href="#" class="btn-gold text-sm px-5 py-2">Start Free Trial →</a>
+        </div>
+        <button id="mobile-menu-btn" class="md:hidden text-white p-2" aria-label="Toggle mobile menu" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/></svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ARTICLE HERO -->
+    <section class="relative pt-16">
+      <div class="relative h-[420px] lg:h-[480px] overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1200&q=80&fit=crop" alt="Hotel restaurant bar counter" class="w-full h-full object-cover" loading="eager"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-950 via-brand-950/60 to-brand-950/20"></div>
+        <span class="blog-tag bg-white/90 text-amber-700 absolute top-24 right-6 lg:right-12">PoS Guides</span>
+        <div class="absolute bottom-0 left-0 right-0 p-8 lg:p-12">
+          <div class="max-w-4xl mx-auto">
+            <h1 class="text-3xl lg:text-5xl font-extrabold text-white tracking-tight mb-5 leading-tight">Why Your Hotel Restaurant is Losing Revenue at the Bar (And How to Fix It)</h1>
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-500 to-emerald-700 flex items-center justify-center text-white font-bold text-sm">NP</div>
+              <div>
+                <p class="text-white font-medium text-sm">Nripendra Nath Puzari</p>
+                <p class="text-slate-400 text-xs">March 28, 2026 · 6 min read</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARTICLE BODY -->
+    <article class="max-w-3xl mx-auto px-6 lg:px-8 py-12 lg:py-16">
+
+      <p class="text-lg text-slate-700 leading-relaxed mb-8">Your hotel restaurant might be full every evening. The bar could be buzzing on weekends. And yet, when you look at the monthly F&B numbers, something doesn't add up. Revenue is lower than it should be. Margins are thinner than expected. And nobody can pinpoint exactly where the money is going.</p>
+
+      <p class="text-lg text-slate-700 leading-relaxed mb-8">This is one of the most common problems we see across independent hotels in India. The food and beverage operation looks healthy on the surface, but underneath, there are quiet leaks draining revenue every single day. The good news? Most of them are fixable, once you know where to look.</p>
+
+      <!-- H2 -->
+      <h2 class="text-2xl font-bold text-slate-900 mb-4 mt-12 flex items-center gap-3">
+        <span class="w-1 h-8 bg-brand-600 rounded-full flex-shrink-0"></span>
+        The Invisible Revenue Leak in Hotel F&B
+      </h2>
+      <p class="text-lg text-slate-700 leading-relaxed mb-6">Hotel restaurants don't lose money the way retail stores do. There's rarely a dramatic event. Instead, it's a slow drip. A few unrecorded drinks here. A complimentary appetizer that never gets logged there. A room service order that gets lost between the kitchen and the front desk system.</p>
+      <p class="text-lg text-slate-700 leading-relaxed mb-8">Individually, each of these is small. But over a month, they compound into thousands of rupees. Over a year, you could be looking at lakhs of unaccounted revenue. The challenge is that most hotel operators don't have visibility into these micro-losses because their systems aren't connected. The bar runs on one process, the kitchen on another, and the front desk on a third. Information falls through the gaps between them.</p>
+
+      <h2 class="text-2xl font-bold text-slate-900 mb-4 mt-12 flex items-center gap-3">
+        <span class="w-1 h-8 bg-brand-600 rounded-full flex-shrink-0"></span>
+        Where the Money Actually Goes
+      </h2>
+      <p class="text-lg text-slate-700 leading-relaxed mb-6">When we audit hotel F&B operations, three problems show up again and again.</p>
+      <p class="text-lg text-slate-700 leading-relaxed mb-6"><strong>Inventory shrinkage.</strong> This is the gap between what you purchased and what you actually sold. In hotels without real-time inventory tracking, shrinkage rates of 8-15% are common at the bar. Spirits get over-poured. Bottles go unrecorded. Wastage isn't logged. By the time anyone notices, the month is already closed and the money is gone.</p>
+      <p class="text-lg text-slate-700 leading-relaxed mb-6"><strong>Slow and manual billing.</strong> When your bar or restaurant relies on handwritten KOTs or delayed billing, orders get missed. A guest orders two cocktails, but only one makes it onto the bill. The server forgets to enter the appetizer. During a busy Friday evening, three or four such errors per hour aren't unusual. Multiply that across a month and the numbers become significant.</p>
+      <p class="text-lg text-slate-700 leading-relaxed mb-8"><strong>Unposted charges.</strong> This is perhaps the most damaging leak of all. A guest orders room service or signs a bar tab to their room. But the charge never reaches their folio. They check out the next morning, settle only the room bill, and the F&B charge simply vanishes. In hotels where PoS and PMS aren't integrated, this happens far more often than anyone admits.</p>
+
+      <!-- Tip box -->
+      <div class="bg-brand-50 border border-brand-100 rounded-xl p-6 mb-8">
+        <p class="text-sm font-semibold text-brand-700 mb-2">Pro Tip</p>
+        <p class="text-slate-700">Run a weekly reconciliation between your PoS sales report and your PMS folio postings. If the numbers don't match, you have unposted charges leaking revenue. Even a 10-minute weekly check can catch thousands in missed postings.</p>
+      </div>
+
+      <h2 class="text-2xl font-bold text-slate-900 mb-4 mt-12 flex items-center gap-3">
+        <span class="w-1 h-8 bg-brand-600 rounded-full flex-shrink-0"></span>
+        The Room Charge Posting Problem
+      </h2>
+      <p class="text-lg text-slate-700 leading-relaxed mb-6">Room charge posting deserves special attention because it sits at the intersection of two systems that, in most hotels, don't talk to each other. When a guest says "charge it to my room," a chain of events needs to happen instantly. The PoS needs to verify the guest is actually checked in. It needs to confirm the room number. It needs to post the charge to the correct folio. And it needs to do all of this without the server walking to the front desk or calling someone on the phone.</p>
+      <p class="text-lg text-slate-700 leading-relaxed mb-8">When these systems are disconnected, the server writes down the room number, promises to post it later, and sometimes forgets. Or they post it to the wrong room. Or the front desk can't find the guest because the name was spelled differently. Every one of these friction points is a potential revenue leak. With integrated PMS-PoS systems like Horizon, room charge posting happens in real time, at the point of sale, with automatic guest verification. The server taps the room number, the system confirms the guest, and the charge hits the folio instantly. No phone calls. No paper trails. No lost revenue.</p>
+
+      <!-- Blockquote -->
+      <blockquote class="border-l-4 border-brand-400 pl-6 my-10">
+        <p class="text-xl text-slate-600 italic leading-relaxed">"We discovered that nearly 40,000 rupees in bar charges went unposted every month. Once we connected our PoS to the PMS, that number dropped to almost zero within the first week."</p>
+        <p class="text-sm text-slate-500 mt-3 font-medium">— Rajiv Menon, F&B Manager, The Grand Orchid, Kochi</p>
+      </blockquote>
+
+      <h2 class="text-2xl font-bold text-slate-900 mb-4 mt-12 flex items-center gap-3">
+        <span class="w-1 h-8 bg-brand-600 rounded-full flex-shrink-0"></span>
+        How Real-Time Inventory Tracking Changes Everything
+      </h2>
+      <p class="text-lg text-slate-700 leading-relaxed mb-6">Most hotel bars track inventory by counting bottles at the end of the month. By then, it's too late to act on anything. You know you lost money, but you don't know when or how. Real-time inventory tracking flips this equation. Every drink poured gets deducted from stock immediately. Every bottle opened is logged. Every wastage entry is recorded with a reason and a timestamp.</p>
+      <p class="text-lg text-slate-700 leading-relaxed mb-8">This means the bar manager can see, on any given day, exactly where stock levels stand versus expected levels based on sales. If there's a discrepancy, they catch it today, not 30 days from now. Hotels that switch to real-time tracking typically see shrinkage drop from double digits to under 3% within two months. That's not a marginal improvement. That's money that was being lost every single day, now recovered.</p>
+
+      <h2 class="text-2xl font-bold text-slate-900 mb-4 mt-12 flex items-center gap-3">
+        <span class="w-1 h-8 bg-brand-600 rounded-full flex-shrink-0"></span>
+        Shift Closing: Your Daily Safety Net
+      </h2>
+      <p class="text-lg text-slate-700 leading-relaxed mb-6">If there's one habit that separates well-run hotel restaurants from the rest, it's disciplined shift closing. At the end of every shift, the outgoing team should reconcile cash, review all open orders, verify that every room charge was posted, and check that the physical cash drawer matches the system total.</p>
+      <p class="text-lg text-slate-700 leading-relaxed mb-8">This takes 10-15 minutes. But it catches errors on the same day they happen, when they're still fixable. Without shift closing discipline, errors accumulate silently. By the end of the month, you're doing forensic accounting to figure out where the numbers went wrong. With a good PoS system, shift closing is guided. The system prompts the cashier through each step, flags discrepancies, and generates a shift report that the manager can review in seconds.</p>
+
+      <!-- Key takeaway -->
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-6 mb-8">
+        <p class="text-sm font-semibold text-slate-900 mb-2">Key Takeaway</p>
+        <p class="text-slate-700">Hotel F&B revenue leaks aren't caused by one big problem. They're caused by dozens of small ones: unposted charges, untracked inventory, missed billing entries, and disconnected systems. The fix isn't working harder. It's connecting your PoS to your PMS, tracking inventory in real time, and making shift closing a non-negotiable daily habit.</p>
+      </div>
+
+      <p class="text-lg text-slate-700 leading-relaxed">Horizon PoS is built to close every one of these gaps. Integrated room charge posting, real-time inventory, guided shift closing, and a direct connection to your PMS so nothing falls through the cracks. If your restaurant's numbers don't add up, <a href="../pos.html" class="text-brand-600 font-medium hover:text-brand-700 underline decoration-brand-200 underline-offset-2">see what Horizon PoS can do for you</a>.</p>
+
+    </article>
+
+    <!-- AUTHOR CARD -->
+    <section class="max-w-3xl mx-auto px-6 lg:px-8 pb-12">
+      <div class="bg-slate-50 rounded-2xl p-6 flex items-start gap-5 border border-slate-100">
+        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-emerald-500 to-emerald-700 flex items-center justify-center text-white font-bold text-lg flex-shrink-0">NP</div>
+        <div>
+          <p class="font-bold text-slate-900">Nripendra Nath Puzari</p>
+          <p class="text-sm text-brand-600 font-medium mb-2">Founding Director, megontech</p>
+          <p class="text-slate-600 text-sm leading-relaxed">Nripendra brings years of hands-on hospitality experience to megontech, focusing on building F&B technology that helps hotels recover lost revenue and streamline restaurant operations.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- RELATED ARTICLES -->
+    <section class="bg-slate-50 py-16">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8">
+        <h2 class="text-2xl font-bold text-slate-900 mb-8">Related Articles</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <a href="morning-routine.html" class="card-blog group">
+            <div class="blog-cover bg-gradient-to-br from-brand-600 to-brand-800">
+              <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&h=300&fit=crop&q=80" alt="Hotel lobby with front desk" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500"/>
+              <span class="blog-tag bg-white/90 text-brand-700">PMS Tips</span>
+            </div>
+            <div class="blog-body">
+              <h3 class="font-bold text-slate-900 mb-2 leading-snug group-hover:text-brand-600 transition-colors">The 10-Minute Morning Routine That Keeps Your Front Desk Stress-Free</h3>
+              <p class="text-slate-500 text-sm">How the best hotel front desks start every day with a quick 10-minute routine.</p>
+            </div>
+          </a>
+          <a href="night-audit.html" class="card-blog group">
+            <div class="blog-cover bg-gradient-to-br from-brand-600 to-brand-800">
+              <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600&h=300&fit=crop&q=80" alt="Hotel at night" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500"/>
+              <span class="blog-tag bg-white/90 text-brand-700">PMS Tips</span>
+            </div>
+            <div class="blog-body">
+              <h3 class="font-bold text-slate-900 mb-2 leading-snug group-hover:text-brand-600 transition-colors">How to Run a Perfect Night Audit, Every Night</h3>
+              <p class="text-slate-500 text-sm">Step-by-step: what a clean night audit looks like, and why it protects your revenue.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOFT CTA -->
+    <section class="gradient-brand py-16">
+      <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-bold text-white mb-4">See How Horizon PoS Eliminates Revenue Leaks</h2>
+        <p class="text-white/70 mb-8">Integrated billing, real-time inventory, and automatic room charge posting. Stop losing money at the bar.</p>
+        <a href="#" class="btn-gold text-base px-8 py-3.5">Start Free Trial, 14 Days Free →</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-brand-950 pt-16 pb-8" aria-label="Site footer">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="bg-brand-900 rounded-2xl p-8 mb-12 flex flex-col md:flex-row items-center gap-6">
+        <div class="flex-1">
+          <h3 class="text-white font-bold text-xl mb-1">Get Weekly Hospitality Insights</h3>
+          <p class="text-slate-400 text-sm">Revenue tips, product updates, and industry trends, every Thursday.</p>
+        </div>
+        <div class="flex gap-2 w-full md:w-auto">
+          <input type="email" placeholder="your@hotel.com" class="form-input-dark flex-1 md:w-64 text-sm px-4 py-3 rounded-lg"/>
+          <button class="btn-brand text-sm px-5 py-3">Subscribe →</button>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+        <div class="col-span-2 md:col-span-1">
+          <a href="../index.html" class="inline-block mb-4">
+            <svg viewBox="0 0 160 32" xmlns="http://www.w3.org/2000/svg" height="28">
+              <defs><linearGradient id="lgf" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#1D4ED8"/><stop offset="100%" style="stop-color:#6366F1"/></linearGradient></defs>
+              <rect x="0" y="2" width="28" height="28" rx="7" fill="url(#lgf)"/>
+              <path d="M6 26 V13 L14 6 L22 13 V26 H19 V16 L14 10.5 L9 16 V26 Z" fill="#fff" opacity="0.95"/>
+              <text x="36" y="22" font-family="Inter,system-ui,sans-serif" font-weight="800" font-size="18" fill="#F1F5F9" letter-spacing="-0.6">megon</text>
+              <text x="97" y="22" font-family="Inter,system-ui,sans-serif" font-weight="400" font-size="18" fill="#94A3B8" letter-spacing="-0.3">tech</text>
+            </svg>
+          </a>
+          <p class="text-slate-400 text-sm mb-4">Powering the future of Indian hospitality.</p>
+          <div class="flex gap-3">
+            <a href="#" class="text-slate-500 hover:text-slate-300 transition-colors" aria-label="LinkedIn"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+            <a href="#" class="text-slate-500 hover:text-slate-300 transition-colors" aria-label="Twitter"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="#" class="text-slate-500 hover:text-slate-300 transition-colors" aria-label="Instagram"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <p class="text-white font-semibold text-sm mb-4">Product</p>
+          <ul class="space-y-2 text-sm text-slate-400">
+            <li><a href="../pms.html" class="hover:text-white transition-colors">PMS</a></li>
+            <li><a href="../pos.html" class="hover:text-white transition-colors">PoS</a></li>
+            <li><a href="../pricing.html" class="hover:text-white transition-colors">Pricing</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-white font-semibold text-sm mb-4">Company</p>
+          <ul class="space-y-2 text-sm text-slate-400">
+            <li><a href="../about.html" class="hover:text-white transition-colors">About Us</a></li>
+            <li><a href="../blog.html" class="hover:text-white transition-colors">Blog</a></li>
+            <li><a href="../contact.html" class="hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-white font-semibold text-sm mb-4">Get Started</p>
+          <ul class="space-y-2 text-sm text-slate-400">
+            <li><a href="../demo.html" class="hover:text-white transition-colors">Book a Demo</a></li>
+            <li><a href="#" class="btn-gold text-xs px-4 py-2 mt-2 inline-block">Start Free Trial →</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
+        <p>© 2026 Megon Technologies India Private Limited</p>
+        <div class="flex items-center gap-4">
+          <a href="../privacy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+          <span class="text-slate-700">·</span>
+          <a href="../terms.html" class="hover:text-white transition-colors">Terms of Service</a>
+          <span class="text-slate-700">·</span>
+          <a href="https://techindika.com" rel="noopener noreferrer" target="_blank" class="hover:text-white transition-colors">Techindika</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js" defer></script>
+</body>
+</html>

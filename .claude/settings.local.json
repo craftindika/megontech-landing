@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(wc:*)",
+      "Bash(claude plugins:*)",
+      "Bash(claude plugin:*)",
+      "Bash(vercel --version)",
+      "Bash(npm install:*)",
+      "Bash(gh --version)",
+      "Bash(git --version)",
+      "Bash(/opt/homebrew/bin/brew install:*)",
+      "Bash(defaults read:*)",
+      "Bash(defaults domains:*)",
+      "Bash(plutil -p ~/Library/Preferences/com.apple.Terminal.plist)",
+      "Bash(defaults write:*)",
+      "Bash(/opt/homebrew/bin/gh auth:*)",
+      "Bash(/opt/homebrew/bin/npm install:*)",
+      "Bash(export PATH=\"/opt/homebrew/bin:$PATH\")",
+      "Bash(vercel whoami:*)"
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+Disallow: /assets/favicon/
+Disallow: /js/
+
+User-agent: Googlebot
+Allow: /css/
+Allow: /js/
+
+Sitemap: https://megontech.com/sitemap.xml

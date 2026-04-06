@@ -16,7 +16,9 @@
       "Bash(/opt/homebrew/bin/gh auth:*)",
       "Bash(/opt/homebrew/bin/npm install:*)",
       "Bash(export PATH=\"/opt/homebrew/bin:$PATH\")",
-      "Bash(vercel whoami:*)"
+      "Bash(vercel whoami:*)",
+      "Bash(grep -rn 'Login\\\\|login' \"/Users/pradeep/My Drive/MY DOCS/COMPANY AND WORK/TECHINDIKA/Claude/PMS & PoS/megontech-landing/\"*.html \"/Users/pradeep/My Drive/MY DOCS/COMPANY AND WORK/TECHINDIKA/Claude/PMS & PoS/megontech-landing/blog/\"*.html)",
+      "Bash(grep:*)"
     ]
   }
 }

@@ -5,8 +5,8 @@
 
 /* ── BASE ── */
 *  { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
+body { font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
 
 /* ── CSS TOKENS ── */
 :root {

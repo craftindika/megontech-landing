@@ -109,7 +109,7 @@
           <h1 class="text-3xl lg:text-5xl font-extrabold text-slate-900 tracking-tight mb-5">Ideas to Run a Better Hotel.</h1>
           <p class="text-xl text-slate-500 mb-8">Revenue management, tech trends, team tips, and the future of Indian hospitality, straight from the megontech team.</p>
           <div class="relative max-w-lg mx-auto">
-            <input type="search" placeholder="Search articles..." class="form-input w-full pl-10 pr-4 py-3 rounded-xl text-sm border border-slate-200"/>
+            <input type="search" id="blog-search" placeholder="Search articles..." class="form-input w-full pl-10 pr-4 py-3 rounded-xl text-sm border border-slate-200"/>
             <svg class="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
           </div>
         </div>
@@ -146,12 +146,12 @@
     <!-- CATEGORY TABS -->
     <section class="bg-white pb-8" aria-label="Blog categories">
       <div class="max-w-7xl mx-auto px-6 lg:px-12">
-        <div class="flex flex-wrap gap-2">
-          <button class="tab-btn active text-sm">All</button>
-          <button class="tab-btn text-sm">PMS Tips</button>
-          <button class="tab-btn text-sm">PoS Guides</button>
-          <button class="tab-btn text-sm">Revenue</button>
-          <button class="tab-btn text-sm">Tech &amp; Trends</button>
+        <div class="flex flex-wrap gap-2" id="blog-category-tabs">
+          <button class="tab-btn active text-sm" data-filter="All">All</button>
+          <button class="tab-btn text-sm" data-filter="PMS Tips">PMS Tips</button>
+          <button class="tab-btn text-sm" data-filter="PoS Guides">PoS Guides</button>
+          <button class="tab-btn text-sm" data-filter="Revenue">Revenue</button>
+          <button class="tab-btn text-sm" data-filter="Tech &amp; Trends">Tech &amp; Trends</button>
         </div>
       </div>
     </section>
@@ -161,7 +161,7 @@
       <div class="max-w-7xl mx-auto px-6 lg:px-12">
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-          <article class="card-blog reveal-scale stagger-1">
+          <article class="card-blog reveal-scale stagger-1" data-category="PMS Tips" data-title="The 10-Minute Morning Routine That Keeps Your Front Desk Stress-Free">
             <div class="blog-cover bg-gradient-to-br from-brand-700 to-indigo-500">
               <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&h=300&fit=crop&q=80" alt="Hotel exterior with palm trees" class="absolute inset-0 w-full h-full object-cover" loading="lazy"/>
               <svg class="w-16 h-16 text-white relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
@@ -177,7 +177,7 @@
             </div>
           </article>
 
-          <article class="card-blog reveal-scale stagger-2">
+          <article class="card-blog reveal-scale stagger-2" data-category="PoS Guides" data-title="Why Your Hotel Restaurant is Losing Revenue at the Bar">
             <div class="blog-cover bg-gradient-to-br from-amber-500 to-orange-500">
               <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=600&h=300&fit=crop&q=80" alt="Restaurant bar interior" class="absolute inset-0 w-full h-full object-cover" loading="lazy"/>
               <svg class="w-16 h-16 text-white relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
@@ -193,7 +193,7 @@
             </div>
           </article>
 
-          <article class="card-blog reveal-scale stagger-3">
+          <article class="card-blog reveal-scale stagger-3" data-category="Revenue" data-title="Dynamic Pricing for Independent Hotels A Practical Playbook">
             <div class="blog-cover bg-gradient-to-br from-emerald-500 to-teal-500">
               <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&h=300&fit=crop&q=80" alt="Elegant hotel room interior" class="absolute inset-0 w-full h-full object-cover" loading="lazy"/>
               <svg class="w-16 h-16 text-white relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
@@ -209,7 +209,7 @@
             </div>
           </article>
 
-          <article class="card-blog reveal-scale stagger-4">
+          <article class="card-blog reveal-scale stagger-4" data-category="Tech &amp; Trends" data-title="The 5 Hotel Tech Trends Defining Indian Hospitality in 2026">
             <div class="blog-cover bg-gradient-to-br from-purple-500 to-pink-500">
               <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=600&h=300&fit=crop&q=80" alt="Modern hotel with pool" class="absolute inset-0 w-full h-full object-cover" loading="lazy"/>
               <svg class="w-16 h-16 text-white relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
@@ -225,7 +225,7 @@
             </div>
           </article>
 
-          <article class="card-blog reveal-scale stagger-5">
+          <article class="card-blog reveal-scale stagger-5" data-category="PMS Tips" data-title="How to Run a Perfect Night Audit Every Night Without the Stress">
             <div class="blog-cover bg-gradient-to-br from-brand-600 to-brand-800">
               <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600&h=300&fit=crop&q=80" alt="Hotel at night with lights" class="absolute inset-0 w-full h-full object-cover" loading="lazy"/>
               <svg class="w-16 h-16 text-white relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
@@ -241,7 +241,7 @@
             </div>
           </article>
 
-          <article class="card-blog reveal-scale stagger-6">
+          <article class="card-blog reveal-scale stagger-6" data-category="Revenue" data-title="OTA vs Direct Bookings The Real Cost Calculation Every Hotel Owner Needs">
             <div class="blog-cover bg-gradient-to-br from-amber-500 to-amber-600">
               <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=600&h=300&fit=crop&q=80" alt="Hotel exterior with pool at sunset" class="absolute inset-0 w-full h-full object-cover" loading="lazy"/>
               <svg class="w-16 h-16 text-white relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>

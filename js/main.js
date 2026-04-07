@@ -122,6 +122,63 @@
   });
 }());
 
+// ── BLOG SEARCH + CATEGORY FILTER ──
+(function () {
+  var search = document.getElementById('blog-search');
+  var tabs   = document.getElementById('blog-category-tabs');
+  if (!search || !tabs) return;
+
+  var articles    = document.querySelectorAll('.card-blog[data-category]');
+  var tabBtns     = tabs.querySelectorAll('[data-filter]');
+  var activeFilter = 'All';
+
+  function filterArticles() {
+    var query = search.value.toLowerCase().trim();
+    var shown = 0;
+    articles.forEach(function (el) {
+      var cat   = el.getAttribute('data-category') || '';
+      var title = el.getAttribute('data-title') || '';
+      var text  = el.textContent.toLowerCase();
+      var matchCat   = (activeFilter === 'All' || cat === activeFilter);
+      var matchQuery = (!query || title.toLowerCase().indexOf(query) !== -1 || text.indexOf(query) !== -1);
+      if (matchCat && matchQuery) {
+        el.style.display = '';
+        shown++;
+      } else {
+        el.style.display = 'none';
+      }
+    });
+    // Show "no results" message
+    var grid = articles[0] && articles[0].parentElement;
+    var noRes = document.getElementById('blog-no-results');
+    if (shown === 0 && grid) {
+      if (!noRes) {
+        noRes = document.createElement('div');
+        noRes.id = 'blog-no-results';
+        noRes.className = 'col-span-full text-center py-16';
+        noRes.innerHTML = '<p class="text-slate-400 text-lg">No articles found. Try a different search or category.</p>';
+        grid.appendChild(noRes);
+      }
+      noRes.style.display = '';
+    } else if (noRes) {
+      noRes.style.display = 'none';
+    }
+  }
+
+  // Search input
+  search.addEventListener('input', filterArticles);
+
+  // Category tabs
+  tabBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      tabBtns.forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      activeFilter = btn.getAttribute('data-filter');
+      filterArticles();
+    });
+  });
+}());
+
 // ── SMOOTH SCROLL ──
 document.querySelectorAll('a[href^="#"]').forEach(function (a) {
   if (a.getAttribute('href') === '#') return; // skip CTA buttons

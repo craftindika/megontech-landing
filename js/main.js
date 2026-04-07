@@ -18,18 +18,53 @@
   var btn  = document.getElementById('mobile-menu-btn');
   var menu = document.getElementById('mobile-menu');
   if (!btn || !menu) return;
-  var open = false;
-  var iconMenu = '<svg width="24" height="24" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/></svg>';
-  var iconClose= '<svg width="24" height="24" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>';
-  btn.addEventListener('click', function () {
-    open = !open;
-    menu.classList.toggle('hidden', !open);
-    btn.innerHTML = open ? iconClose : iconMenu;
-    btn.setAttribute('aria-expanded', open);
+  var isOpen = false;
+  var tapping = false;
+
+  function toggle() {
+    isOpen = !isOpen;
+    menu.classList.toggle('hidden', !isOpen);
+    btn.classList.toggle('menu-open', isOpen);
+    btn.setAttribute('aria-expanded', String(isOpen));
+  }
+
+  function close() {
+    if (!isOpen) return;
+    isOpen = false;
+    menu.classList.add('hidden');
+    btn.classList.remove('menu-open');
+    btn.setAttribute('aria-expanded', 'false');
+  }
+
+  // Use touchend for instant response on iOS (no 300ms delay)
+  btn.addEventListener('touchstart', function (e) {
+    tapping = true;
+  }, { passive: true });
+
+  btn.addEventListener('touchend', function (e) {
+    if (!tapping) return;
+    tapping = false;
+    e.preventDefault(); // prevent ghost click
+    toggle();
   });
+
+  // Fallback click for non-touch (desktop resize to mobile)
+  btn.addEventListener('click', function (e) {
+    if (tapping) return; // already handled by touchend
+    toggle();
+  });
+
+  // Close on outside tap — use touchend with a delay to avoid same-frame conflict
+  document.addEventListener('touchend', function (e) {
+    if (isOpen && !btn.contains(e.target) && !menu.contains(e.target)) {
+      setTimeout(close, 10);
+    }
+  }, { passive: true });
+
+  // Close on outside click (desktop fallback)
   document.addEventListener('click', function (e) {
-    if (open && !btn.contains(e.target) && !menu.contains(e.target)) {
-      open = false; menu.classList.add('hidden'); btn.innerHTML = iconMenu; btn.setAttribute('aria-expanded', 'false');
+    if (isOpen && !btn.contains(e.target) && !menu.contains(e.target)) {
+      close();
     }
   });
 }());

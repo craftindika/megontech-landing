@@ -17,7 +17,12 @@ a, button, [role="button"], input, select, textarea, summary {
   display: flex; align-items: center; justify-content: center;
   -webkit-tap-highlight-color: rgba(255,255,255,.1);
   cursor: pointer;
+  -webkit-user-select: none; user-select: none;
 }
+#mobile-menu-btn .icon-menu { display: block; }
+#mobile-menu-btn .icon-close { display: none; }
+#mobile-menu-btn.menu-open .icon-menu { display: none; }
+#mobile-menu-btn.menu-open .icon-close { display: block; }
 #mobile-menu a {
   display: block; padding: .75rem 0;
   min-height: 44px;

@@ -8,6 +8,26 @@
 html { scroll-behavior: smooth; overflow-x: hidden; }
 body { font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
 
+/* ── MOBILE TOUCH FIXES ── */
+a, button, [role="button"], input, select, textarea, summary {
+  touch-action: manipulation; /* disables double-tap-to-zoom on interactive elements */
+}
+#mobile-menu-btn {
+  min-width: 48px; min-height: 48px;
+  display: flex; align-items: center; justify-content: center;
+  -webkit-tap-highlight-color: rgba(255,255,255,.1);
+  cursor: pointer;
+}
+#mobile-menu a {
+  display: block; padding: .75rem 0;
+  min-height: 44px;
+  -webkit-tap-highlight-color: rgba(255,255,255,.08);
+}
+#mobile-menu .btn-ghost-dark,
+#mobile-menu .btn-gold {
+  min-height: 48px; display: flex; align-items: center; justify-content: center;
+}
+
 /* ── CSS TOKENS ── */
 :root {
   --brand-950: #020617; --brand-900: #0F172A; --brand-800: #1E293B;

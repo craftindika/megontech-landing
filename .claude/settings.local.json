@@ -17,7 +17,9 @@
       "Bash(/opt/homebrew/bin/npm install:*)",
       "Bash(export PATH=\"/opt/homebrew/bin:$PATH\")",
       "Bash(vercel whoami:*)",
-      "Bash(vercel --yes --prod)"
+      "Bash(vercel --yes --prod)",
+      "Bash(sed -n '/<footer/,/<\\\\/footer>/p' index.html)",
+      "Bash(sed 's|href=\"index.html\"|href=\"../index.html\"|g; s|href=\"pms.html\"|href=\"../pms.html\"|g; s|href=\"pos.html\"|href=\"../pos.html\"|g; s|href=\"pricing.html\"|href=\"../pricing.html\"|g; s|href=\"about.html\"|href=\"../about.html\"|g; s|href=\"blog.html\"|href=\"../blog.html\"|g; s|href=\"contact.html\"|href=\"../contact.html\"|g; s|href=\"demo.html\"|href=\"../demo.html\"|g; s|href=\"privacy.html\"|href=\"../privacy.html\"|g; s|href=\"terms.html\"|href=\"../terms.html\"|g' /tmp/footer_root.html)"
     ]
   }
 }

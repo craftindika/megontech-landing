@@ -163,13 +163,49 @@
   var tabs   = document.getElementById('blog-category-tabs');
   if (!search || !tabs) return;
 
-  var articles    = document.querySelectorAll('.card-blog[data-category]');
-  var tabBtns     = tabs.querySelectorAll('[data-filter]');
-  var activeFilter = 'All';
+  var articles      = document.querySelectorAll('.card-blog[data-category]');
+  var tabBtns       = tabs.querySelectorAll('[data-filter]');
+  var featured      = document.getElementById('blog-featured');
+  var filterBar     = document.getElementById('blog-filter-bar');
+  var searchInline  = document.getElementById('blog-search-inline');
+  var searchLabel   = document.getElementById('blog-search-label');
+  var searchClear   = document.getElementById('blog-search-clear');
+  var activeFilter  = 'All';
+  var isSearching   = false;
+
+  function setSearchMode(active) {
+    isSearching = active;
+    // Hide/show featured article
+    if (featured) featured.style.display = active ? 'none' : '';
+    // Show/hide inline search indicator in filter bar
+    if (searchInline) searchInline.style.display = active ? 'flex' : 'none';
+    // Add background to sticky bar when searching
+    if (filterBar) {
+      if (active) {
+        filterBar.classList.add('bg-white', 'shadow-sm', 'border-b', 'border-slate-100', 'pt-4');
+      } else {
+        filterBar.classList.remove('bg-white', 'shadow-sm', 'border-b', 'border-slate-100', 'pt-4');
+      }
+    }
+    // Scroll results into view
+    if (active && filterBar) {
+      filterBar.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
 
   function filterArticles() {
     var query = search.value.toLowerCase().trim();
     var shown = 0;
+
+    // Toggle search mode
+    if (query && !isSearching) setSearchMode(true);
+    if (!query && isSearching) setSearchMode(false);
+
+    // Update inline label
+    if (searchLabel && query) {
+      searchLabel.textContent = 'Searching: "' + search.value.trim() + '"';
+    }
+
     articles.forEach(function (el) {
       var cat   = el.getAttribute('data-category') || '';
       var title = el.getAttribute('data-title') || '';
@@ -183,6 +219,7 @@
         el.style.display = 'none';
       }
     });
+
     // Show "no results" message
     var grid = articles[0] && articles[0].parentElement;
     var noRes = document.getElementById('blog-no-results');
@@ -202,6 +239,15 @@
 
   // Search input
   search.addEventListener('input', filterArticles);
+
+  // Clear search
+  if (searchClear) {
+    searchClear.addEventListener('click', function () {
+      search.value = '';
+      filterArticles();
+      search.focus();
+    });
+  }
 
   // Category tabs
   tabBtns.forEach(function (btn) {

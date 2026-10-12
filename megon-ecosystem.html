@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="robots" content="noindex, nofollow"/>
+<meta name="description" content="Internal prototype: Megon product-ecosystem diagram. Not for public consumption."/>
+<title>Megon Ecosystem Diagram, Prototype</title>
+<link rel="icon" href="/assets/favicon/favicon.svg?v=2" type="image/svg+xml"/>
+<link rel="icon" href="/assets/favicon/favicon.ico?v=2" sizes="48x48"/>
+<link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png?v=2"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"/>
+<style>
+  :root {
+    --brand-950:#020617; --brand-900:#0F172A; --brand-800:#1E293B;
+    --brand-700:#1D4ED8; --brand-600:#2563EB; --brand-500:#3B82F6; --brand-400:#60A5FA;
+    --brand-100:#DBEAFE;
+    --gold:#F59E0B; --gold-400:#FBBF24;
+    --emerald:#10B981; --emerald-400:#34D399;
+    --purple:#8B5CF6; --purple-400:#A78BFA;
+    --rose:#F43F5E;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background:
+      radial-gradient(1200px 700px at 20% 20%, rgba(29,78,216,.18), transparent 60%),
+      radial-gradient(900px 600px at 80% 80%, rgba(99,102,241,.15), transparent 60%),
+      linear-gradient(160deg, #0F172A 0%, #0B1220 100%);
+    color: #fff;
+    min-height: 100vh;
+  }
+  .wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 64px 32px;
+  }
+  .head { text-align: center; margin-bottom: 48px; }
+  .label {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 9999px;
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(255,255,255,.1);
+    font-size: 12px; font-weight: 700;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: #C7D2FE;
+    margin-bottom: 16px;
+  }
+  h1 {
+    font-size: clamp(2.25rem, 4vw, 3.25rem);
+    font-weight: 800;
+    letter-spacing: -.03em;
+    line-height: 1.1;
+    margin-bottom: 14px;
+  }
+  .text-gradient {
+    background: linear-gradient(100deg, #60A5FA 0%, #818CF8 50%, #C084FC 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .lede {
+    color: #94A3B8;
+    font-size: 1.125rem;
+    max-width: 640px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* ========== DIAGRAM ========== */
+  .diagram {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    aspect-ratio: 1200 / 720;
+    background:
+      radial-gradient(circle at 50% 42%, rgba(37,99,235,.08), transparent 55%),
+      linear-gradient(180deg, rgba(15,23,42,.0), rgba(15,23,42,.4));
+    border: 1px solid rgba(255,255,255,.06);
+    border-radius: 28px;
+    overflow: hidden;
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(255,255,255,.055) 1px, transparent 0);
+    background-size: 28px 28px;
+    background-position: 0 0;
+  }
+
+  /* ---------- Top service pills ---------- */
+  .pill-row {
+    position: absolute;
+    top: 3.2%;
+    left: 0; right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    z-index: 5;
+  }
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 18px;
+    border-radius: 9999px;
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(255,255,255,.1);
+    font-size: 13px;
+    font-weight: 600;
+    color: #E2E8F0;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+  .pill-dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    box-shadow: 0 0 10px currentColor;
+  }
+  .pill.accomm { border-color: rgba(96,165,250,.5); }
+  .pill.accomm .pill-dot { background: #60A5FA; color: #60A5FA; }
+  .pill.trans  { border-color: rgba(52,211,153,.5); }
+  .pill.trans  .pill-dot { background: #34D399; color: #34D399; }
+  .pill.pkg    { border-color: rgba(251,191,36,.5); }
+  .pill.pkg    .pill-dot { background: #FBBF24; color: #FBBF24; }
+
+  /* ---------- Column labels ---------- */
+  .col-label {
+    position: absolute;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: #64748B;
+    z-index: 5;
+  }
+  .col-label.left   { top: 14%; left: 3.3%; }
+  .col-label.center { top: 14%; left: 50%; transform: translateX(-50%); }
+  .col-label.right  { top: 14%; right: 3.3%; }
+
+  /* ---------- Node base ---------- */
+  .node {
+    position: absolute;
+    z-index: 4;
+    background: rgba(15,23,42,.85);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 16px;
+    padding: 14px 16px 12px 18px;
+    overflow: hidden;
+    box-shadow:
+      0 16px 40px rgba(2,6,23,.55),
+      inset 0 1px 0 rgba(255,255,255,.05);
+    transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+  }
+  .node:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 22px 48px rgba(2,6,23,.65), inset 0 1px 0 rgba(255,255,255,.08);
+  }
+  .node .head-row {
+    display: flex; align-items: center; gap: 10px;
+    margin-bottom: 10px;
+  }
+  .node .icon {
+    flex-shrink: 0;
+    width: 38px; height: 38px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 14px rgba(0,0,0,.3), inset 0 1px 0 rgba(255,255,255,.15);
+  }
+  .node .icon svg { width: 20px; height: 20px; color: #fff; }
+  .node .title {
+    font-size: 15px; font-weight: 700; line-height: 1.15;
+    display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  }
+  .node .sub {
+    font-size: 11px; color: #94A3B8;
+    margin-top: 2px;
+  }
+  .node .chips {
+    display: flex; flex-wrap: wrap; gap: 5px;
+    margin-top: 4px;
+  }
+  .node .chip {
+    font-size: 10px;
+    padding: 4px 8px;
+    border-radius: 9999px;
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(255,255,255,.08);
+    color: #CBD5E1;
+    font-weight: 500;
+    letter-spacing: .01em;
+  }
+  .soon {
+    font-size: 9px;
+    padding: 2px 7px;
+    border-radius: 9999px;
+    background: rgba(255,255,255,.05);
+    border: 1px solid rgba(255,255,255,.12);
+    color: #94A3B8;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    font-weight: 600;
+  }
+
+  /* Color-coded border accents on node hover */
+  .node.blue:hover   { border-color: rgba(96,165,250,.5); }
+  .node.green:hover  { border-color: rgba(52,211,153,.5); }
+  .node.amber:hover  { border-color: rgba(251,191,36,.5); }
+  .node.purple:hover { border-color: rgba(167,139,250,.5); }
+  .node.rose:hover   { border-color: rgba(244,63,94,.5); }
+
+  /* Color strips (left edge accent) */
+  .node::before {
+    content:'';
+    position: absolute;
+    left: 0; top: 14px; bottom: 14px;
+    width: 3px;
+    border-radius: 0 3px 3px 0;
+    opacity: .8;
+  }
+  .node.blue::before   { background: linear-gradient(to bottom, #60A5FA, #2563EB); }
+  .node.green::before  { background: linear-gradient(to bottom, #34D399, #10B981); }
+  .node.amber::before  { background: linear-gradient(to bottom, #FBBF24, #D97706); }
+  .node.purple::before { background: linear-gradient(to bottom, #A78BFA, #7C3AED); }
+  .node.rose::before   { background: linear-gradient(to bottom, #F87171, #E11D48); }
+
+  /* ---------- Left column nodes (inputs)
+     Canvas 1200 × 720. Width 24% (288px). Height 17% (~122px, fits 4 wrapping chips).
+     Tops 16% / 41.5% / 67% give centers ≈ 175 / 360 / 544.
+  ---------- */
+  .node.properties { top: 16%;    left: 3%;  width: 24%; height: 17%; }
+  .node.guests     { top: 41.5%;  left: 3%;  width: 24%; height: 17%; }
+  .node.guestkyc   { top: 67%;    left: 3%;  width: 24%; height: 17%; }
+
+  /* ---------- Right column nodes (outputs) ---------- */
+  .node.otas       { top: 16%;    right: 3%; width: 24%; height: 17%; }
+  .node.myalohi    { top: 41.5%;  right: 3%; width: 24%; height: 17%; }
+  .node.reports    { top: 67%;    right: 3%; width: 24%; height: 17%; }
+
+  /* ---------- Central Megon hub ----------
+     Fixed bounds: left 32%, width 36%, top 15%, height 56%.
+     Attach points (in SVG viewBox 0 0 1200 720):
+       left edge x = 384, right edge x = 816
+       attach rows: 218 (upper), 310 (middle), 400 (lower)
+  ---------- */
+  .hub {
+    position: absolute;
+    top: 15%;
+    left: 32%;
+    width: 36%;
+    height: 56%;
+    z-index: 3;
+  }
+  .hub-glow {
+    position: absolute;
+    inset: -20px;
+    border-radius: 32px;
+    background: radial-gradient(circle at center, rgba(96,165,250,.28), transparent 70%);
+    animation: hubGlow 4s ease-in-out infinite;
+    pointer-events: none;
+    z-index: -1;
+  }
+  @keyframes hubGlow {
+    0%,100% { opacity: .5; transform: scale(1); }
+    50%     { opacity: .85; transform: scale(1.06); }
+  }
+  .hub-body {
+    padding: 22px 22px 20px;
+    background: linear-gradient(160deg, rgba(37,99,235,.18) 0%, rgba(99,102,241,.16) 100%);
+    border: 1.5px solid rgba(96,165,250,.4);
+    border-radius: 22px;
+    text-align: center;
+    box-shadow:
+      0 24px 56px rgba(37,99,235,.35),
+      inset 0 1px 0 rgba(255,255,255,.1);
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .hub-body::before {
+    /* Subtle rotating conic gradient for premium feel */
+    content:'';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: conic-gradient(
+      from 0deg,
+      rgba(96,165,250,0) 0deg,
+      rgba(96,165,250,.12) 60deg,
+      rgba(96,165,250,0) 120deg,
+      rgba(96,165,250,0) 240deg,
+      rgba(192,132,252,.1) 300deg,
+      rgba(96,165,250,0) 360deg
+    );
+    animation: hubRotate 12s linear infinite;
+    z-index: -1;
+  }
+  @keyframes hubRotate {
+    to { transform: rotate(360deg); }
+  }
+  .hub-wordmark {
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: -.04em;
+    background: linear-gradient(135deg, #fff 0%, #DBEAFE 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 4px;
+  }
+  .hub-tag {
+    font-size: 10px;
+    color: #94A3B8;
+    text-transform: uppercase;
+    letter-spacing: .22em;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  .hub-modules {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .hub-mod {
+    display: flex; align-items: center; gap: 8px;
+    padding: 8px 10px;
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 10px;
+    color: #E2E8F0;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: left;
+    transition: background-color 180ms ease, border-color 180ms ease;
+  }
+  a.hub-mod:hover {
+    background: rgba(255,255,255,.08);
+    border-color: rgba(96,165,250,.4);
+  }
+  .hub-mod-badge {
+    flex-shrink: 0;
+    min-width: 34px; height: 20px;
+    padding: 0 6px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: .05em;
+    display: inline-flex; align-items: center; justify-content: center;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.15);
+  }
+  .hub-mod-badge.pms { background: linear-gradient(135deg,#1D4ED8,#2563EB); }
+  .hub-mod-badge.pos { background: linear-gradient(135deg,#6366F1,#8B5CF6); }
+  .hub-mod-badge.cm  { background: linear-gradient(135deg,#D97706,#F59E0B); }
+  .hub-mod-badge.adm { background: linear-gradient(135deg,#E11D48,#F43F5E); }
+  .hub-foot {
+    font-size: 10px;
+    color: #64748B;
+    text-transform: uppercase;
+    letter-spacing: .14em;
+    font-weight: 600;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255,255,255,.06);
+  }
+
+  /* ---------- Connector SVG layer ---------- */
+  .svg-layer {
+    position: absolute;
+    inset: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  /* Animated flow dot */
+  @keyframes flowA {
+    0%   { offset-distance: 0%;   opacity: 0; }
+    10%  { opacity: 1; }
+    90%  { opacity: 1; }
+    100% { offset-distance: 100%; opacity: 0; }
+  }
+
+  /* ---------- Foundation strip at bottom ---------- */
+  .foundation {
+    position: absolute;
+    bottom: 3.2%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 22px;
+    background: rgba(255,255,255,.03);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 9999px;
+    font-size: 12px;
+    color: #94A3B8;
+    font-weight: 500;
+    z-index: 5;
+    white-space: nowrap;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+  .foundation b { color: #E2E8F0; font-weight: 700; }
+  .foundation .sep { color: #475569; }
+
+  /* Mobile flow hint, hidden on desktop, visible in mobile stack */
+  .mobile-flow { display: none; }
+
+  /* ---------- Responsive: stack on small ---------- */
+  @media (max-width: 960px) {
+    .diagram {
+      aspect-ratio: auto;
+      padding: 16px;
+      background-image: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .svg-layer, .col-label, .foundation { display: none; }
+    .hub, .node {
+      position: static;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      transform: none;
+    }
+    .mobile-flow {
+      display: block;
+      text-align: center;
+      color: #64748B;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      padding: 10px 0;
+    }
+    /* Flex order: inputs → hub → outputs */
+    .node.properties { order: 1; }
+    .node.guests     { order: 2; }
+    .node.guestkyc   { order: 3; }
+    .hub             { order: 4; }
+    .node.otas       { order: 5; }
+    .node.myalohi    { order: 6; }
+    .node.reports    { order: 7; }
+    .mobile-flow     { order: 8; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <div class="head">
+    <span class="label">Megon Ecosystem · Prototype</span>
+    <h1>Everything you need to <span class="text-gradient">run and grow</span> your hotel.</h1>
+    <p class="lede">One connected system for properties, guests, OTAs and direct bookings. Built for hospitality in Northeast India.</p>
+  </div>
+
+  <!-- Service pills outside diagram (always visible) -->
+  <div style="text-align:center;margin-bottom:28px;">
+    <span class="pill accomm" style="margin:0 6px"><span class="pill-dot"></span> Accommodation</span>
+    <span class="pill trans"  style="margin:0 6px"><span class="pill-dot"></span> Transport</span>
+    <span class="pill pkg"    style="margin:0 6px"><span class="pill-dot"></span> Travel Package</span>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- DIAGRAM CANVAS                                              -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <div class="diagram" role="img" aria-label="Megon ecosystem: properties, guests and GuestKYC feed into the Megon orchestration hub which distributes to OTAs, MyAlohi direct-booking, and reports/insights.">
+
+    <!-- Column labels -->
+    <div class="col-label left">Inputs</div>
+    <div class="col-label center">Megon Core</div>
+    <div class="col-label right">Distribution</div>
+
+    <!-- SVG connector layer -->
+    <svg class="svg-layer" viewBox="0 0 1200 720" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <linearGradient id="lineBlue" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%"  stop-color="#60A5FA" stop-opacity=".85"/>
+          <stop offset="100%" stop-color="#818CF8" stop-opacity=".85"/>
+        </linearGradient>
+        <linearGradient id="lineGreen" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%"  stop-color="#34D399" stop-opacity=".85"/>
+          <stop offset="100%" stop-color="#60A5FA" stop-opacity=".85"/>
+        </linearGradient>
+        <linearGradient id="lineAmber" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%"  stop-color="#818CF8" stop-opacity=".85"/>
+          <stop offset="100%" stop-color="#FBBF24" stop-opacity=".85"/>
+        </linearGradient>
+        <linearGradient id="linePurple" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%"  stop-color="#818CF8" stop-opacity=".85"/>
+          <stop offset="100%" stop-color="#A78BFA" stop-opacity=".85"/>
+        </linearGradient>
+        <linearGradient id="lineRose" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%"  stop-color="#818CF8" stop-opacity=".85"/>
+          <stop offset="100%" stop-color="#F472B6" stop-opacity=".85"/>
+        </linearGradient>
+
+        <!-- Glow filter for flow dots -->
+        <filter id="dotGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="3" result="blur"/>
+          <feMerge>
+            <feMergeNode in="blur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+      </defs>
+
+      <!-- ===== LEFT → HUB =====
+           Node widths 24% (288px), left 3% (36px) → right edge at x = 324.
+           Node heights 17% (122px), tops 16% / 41.5% / 67% → centers y = 175, 360, 544.
+           Hub left edge at x = 384 (32%). Hub-side attach points y = 220 / 360 / 500.
+      ===== -->
+      <path id="p-prop"  d="M 324 175 C 354 175, 354 220, 384 220" stroke="url(#lineBlue)"  stroke-width="2" stroke-dasharray="6 5" fill="none"/>
+      <path id="p-guest" d="M 324 360 L 384 360"                   stroke="url(#lineGreen)" stroke-width="2" stroke-dasharray="6 5" fill="none"/>
+      <path id="p-kyc"   d="M 324 544 C 354 544, 354 500, 384 500" stroke="url(#lineGreen)" stroke-width="2" stroke-dasharray="6 5" fill="none"/>
+
+      <!-- ===== HUB → RIGHT =====
+           Hub right edge at x = 816 (68%). Right-node left edges at x = 876 (73%).
+           Attach points y = 220 / 360 / 500 on hub side; 175 / 360 / 544 on node side.
+      ===== -->
+      <path id="p-ota"   d="M 816 220 C 846 220, 846 175, 876 175" stroke="url(#lineAmber)"  stroke-width="2" stroke-dasharray="6 5" fill="none"/>
+      <path id="p-alohi" d="M 816 360 L 876 360"                   stroke="url(#linePurple)" stroke-width="2" stroke-dasharray="6 5" fill="none"/>
+      <path id="p-rep"   d="M 816 500 C 846 500, 846 544, 876 544" stroke="url(#lineRose)"   stroke-width="2" stroke-dasharray="6 5" fill="none"/>
+
+      <!-- Animated flow dots (using SMIL animateMotion for simplicity) -->
+      <circle r="3.5" fill="#60A5FA" filter="url(#dotGlow)">
+        <animateMotion dur="4s" repeatCount="indefinite">
+          <mpath href="#p-prop"/>
+        </animateMotion>
+      </circle>
+      <circle r="3.5" fill="#34D399" filter="url(#dotGlow)">
+        <animateMotion dur="4s" begin="0.8s" repeatCount="indefinite">
+          <mpath href="#p-guest"/>
+        </animateMotion>
+      </circle>
+      <circle r="3.5" fill="#34D399" filter="url(#dotGlow)">
+        <animateMotion dur="4s" begin="1.6s" repeatCount="indefinite">
+          <mpath href="#p-kyc"/>
+        </animateMotion>
+      </circle>
+      <circle r="3.5" fill="#FBBF24" filter="url(#dotGlow)">
+        <animateMotion dur="4s" begin="0.4s" repeatCount="indefinite">
+          <mpath href="#p-ota"/>
+        </animateMotion>
+      </circle>
+      <circle r="3.5" fill="#A78BFA" filter="url(#dotGlow)">
+        <animateMotion dur="4s" begin="1.2s" repeatCount="indefinite">
+          <mpath href="#p-alohi"/>
+        </animateMotion>
+      </circle>
+      <circle r="3.5" fill="#F472B6" filter="url(#dotGlow)">
+        <animateMotion dur="4s" begin="2.0s" repeatCount="indefinite">
+          <mpath href="#p-rep"/>
+        </animateMotion>
+      </circle>
+    </svg>
+
+    <!-- ============================================================ -->
+    <!-- LEFT COLUMN, INPUTS                                         -->
+    <!-- ============================================================ -->
+
+    <div class="node blue properties">
+      <div class="head-row">
+        <div class="icon" style="background:linear-gradient(135deg,#1D4ED8,#2563EB)">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5m-5-10h2m-2 4h2m6-4h2m-2 4h2m-5 6v-4a1 1 0 011-1h2a1 1 0 011 1v4"/></svg>
+        </div>
+        <div>
+          <p class="title">Properties</p>
+          <p class="sub">Where hotel operations start</p>
+        </div>
+      </div>
+      <div class="chips">
+        <span class="chip">Hotels</span>
+        <span class="chip">Resorts</span>
+        <span class="chip">Homestays</span>
+        <span class="chip">Guesthouses</span>
+      </div>
+    </div>
+
+    <div class="node green guests">
+      <div class="head-row">
+        <div class="icon" style="background:linear-gradient(135deg,#059669,#10B981)">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M17 20h5v-2a3 3 0 00-5.356-1.857M7 20H2v-2a3 3 0 015.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        </div>
+        <div>
+          <p class="title">Guests</p>
+          <p class="sub">Every arrival, recorded</p>
+        </div>
+      </div>
+      <div class="chips">
+        <span class="chip">Direct</span>
+        <span class="chip">WhatsApp</span>
+        <span class="chip">Walk-in</span>
+      </div>
+    </div>
+
+    <div class="node green guestkyc">
+      <div class="head-row">
+        <div class="icon" style="background:linear-gradient(135deg,#059669,#34D399)">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <div>
+          <p class="title">GuestKYC <span class="soon">Soon</span></p>
+          <p class="sub">ID verification, compliance-ready</p>
+        </div>
+      </div>
+      <div class="chips">
+        <span class="chip">guestkyc.com</span>
+        <span class="chip">ID check</span>
+        <span class="chip">Form C ready</span>
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- CENTER, MEGON HUB                                           -->
+    <!-- ============================================================ -->
+
+    <div class="hub">
+      <div class="hub-glow"></div>
+      <div class="hub-body">
+        <div class="hub-wordmark">MEGON</div>
+        <p class="hub-tag">Hospitality Infrastructure</p>
+        <div class="hub-modules">
+          <a href="hotel-management-software-assam" class="hub-mod">
+            <span class="hub-mod-badge pms">PMS</span>
+            <span>Reservista PMS</span>
+          </a>
+          <a href="hotel-pos-software-assam" class="hub-mod">
+            <span class="hub-mod-badge pos">POS</span>
+            <span>Reservista POS</span>
+          </a>
+          <div class="hub-mod">
+            <span class="hub-mod-badge cm">CM</span>
+            <span>Channel Manager</span>
+          </div>
+          <div class="hub-mod">
+            <span class="hub-mod-badge adm">Admin</span>
+            <span>Megon Admin</span>
+          </div>
+        </div>
+        <p class="hub-foot">Central dashboard · Reports · Guest data</p>
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- RIGHT COLUMN, OUTPUTS                                       -->
+    <!-- ============================================================ -->
+
+    <div class="node amber otas">
+      <div class="head-row">
+        <div class="icon" style="background:linear-gradient(135deg,#D97706,#F59E0B)">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/></svg>
+        </div>
+        <div>
+          <p class="title">OTA Channels</p>
+          <p class="sub">One listing, all channels</p>
+        </div>
+      </div>
+      <div class="chips">
+        <span class="chip">Booking.com</span>
+        <span class="chip">MakeMyTrip</span>
+        <span class="chip">Agoda</span>
+        <span class="chip">Goibibo</span>
+      </div>
+    </div>
+
+    <div class="node purple myalohi">
+      <div class="head-row">
+        <div class="icon" style="background:linear-gradient(135deg,#7C3AED,#A78BFA)">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3.124 7.5A8.969 8.969 0 015.292 3h13.416a8.969 8.969 0 012.168 4.5M2.25 9h19.5m-19.5 0a9 9 0 009 9m-9-9a9 9 0 019-9m0 18a9 9 0 009-9m-9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9h18"/></svg>
+        </div>
+        <div>
+          <p class="title">MyAlohi <span class="soon">Soon</span></p>
+          <p class="sub">Direct bookings &amp; tours</p>
+        </div>
+      </div>
+      <div class="chips">
+        <span class="chip">myalohi.com</span>
+        <span class="chip">Direct</span>
+        <span class="chip">Tour packages</span>
+      </div>
+    </div>
+
+    <div class="node rose reports">
+      <div class="head-row">
+        <div class="icon" style="background:linear-gradient(135deg,#E11D48,#F43F5E)">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+        </div>
+        <div>
+          <p class="title">Reports &amp; Insights</p>
+          <p class="sub">Numbers you can act on</p>
+        </div>
+      </div>
+      <div class="chips">
+        <span class="chip">Revenue</span>
+        <span class="chip">Occupancy</span>
+        <span class="chip">Compliance</span>
+      </div>
+    </div>
+
+    <!-- Foundation strip -->
+    <div class="foundation">
+      <b>Northeast India</b>
+      <span class="sep">·</span>
+      <span>Local support in your language</span>
+      <span class="sep">·</span>
+      <span>Ongoing growth guidance</span>
+    </div>
+
+    <!-- Mobile-only flow hint -->
+    <div class="mobile-flow">Inputs ↓ Megon ↓ Distribution</div>
+
+  </div>
+
+  <!-- Bottom notes -->
+  <p style="text-align:center;color:#64748B;font-size:13px;margin-top:40px;">Prototype canvas. Once approved, this diagram replaces the ecosystem section in <code style="color:#94A3B8">index.html</code>.</p>
+
+</div>
+</body>
+</html>

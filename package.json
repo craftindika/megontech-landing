@@ -1,0 +1,24 @@
+{
+  "name": "reservista-website",
+  "version": "1.1.0",
+  "private": true,
+  "description": "Reservista by Megon — marketing site (static HTML + Express server for form email + http to https + www to apex redirects)",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "nodemailer": "^9.0.1"
+  },
+  "pnpm": {
+    "overrides": {
+      "qs": ">=6.15.2"
+    }
+  }
+}

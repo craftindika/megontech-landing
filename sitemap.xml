@@ -2,55 +2,127 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://megontech.com/</loc>
-    <lastmod>2026-04-01</lastmod>
+    <loc>https://reservista.cloud/</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://megontech.com/assets/favicon/og-image.png</image:loc>
-      <image:title>Horizon PMS &amp; PoS by megontech</image:title>
+      <image:loc>https://reservista.cloud/assets/favicon/og-image.png</image:loc>
+      <image:title>Reservista by Megon. Hospitality management for Northeast India</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://megontech.com/pms</loc>
-    <lastmod>2026-04-01</lastmod>
+    <loc>https://reservista.cloud/hotel-management-software-assam</loc>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://megontech.com/pos</loc>
-    <lastmod>2026-04-01</lastmod>
+    <loc>https://reservista.cloud/hotel-pos-software-assam</loc>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://megontech.com/pricing</loc>
-    <lastmod>2026-04-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://megontech.com/demo</loc>
-    <lastmod>2026-04-01</lastmod>
+    <loc>https://reservista.cloud/demo</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://megontech.com/about</loc>
-    <lastmod>2026-04-01</lastmod>
+    <loc>https://reservista.cloud/about</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://megontech.com/blog</loc>
-    <lastmod>2026-04-01</lastmod>
-    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://megontech.com/contact</loc>
-    <lastmod>2026-04-01</lastmod>
+    <loc>https://reservista.cloud/contact</loc>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://reservista.cloud/pricing</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://reservista.cloud/blog</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://reservista.cloud/blog/best-hotel-management-software-assam</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://reservista.cloud/blog/hotel-pms-adoption-guwahati</loc>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.55</priority>
+  </url>
+  <url>
+    <loc>https://reservista.cloud/blog/restaurant-billing-software-assam-guwahati-hotels-cafes-bars</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://reservista.cloud/blog/hotel-restaurant-pos-profitability-assam</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.55</priority>
+  </url>
+  <url>
+    <loc>https://reservista.cloud/blog/dynamic-pricing</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.45</priority>
+  </url>
+  <url>
+    <loc>https://reservista.cloud/blog/morning-routine</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.45</priority>
+  </url>
+  <url>
+    <loc>https://reservista.cloud/blog/night-audit</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.45</priority>
+  </url>
+  <url>
+    <loc>https://reservista.cloud/blog/ota-vs-direct</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.45</priority>
+  </url>
+  <url>
+    <loc>https://reservista.cloud/blog/restaurant-revenue</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.45</priority>
+  </url>
+  <url>
+    <loc>https://reservista.cloud/blog/tech-trends-2026</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.45</priority>
+  </url>
+  <url>
+    <loc>https://reservista.cloud/privacy</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://reservista.cloud/terms</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>

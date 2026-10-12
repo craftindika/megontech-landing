@@ -1,0 +1,82 @@
+# Reservista by Megon
+
+> Reservista is a hotel management software (PMS) and point-of-sale (POS)
+> platform built specifically for hotels, resorts, homestays, restaurants,
+> bars and cafes in Assam and Northeast India. Made by Megon Technologies
+> India Pvt. Ltd., a Guwahati-based travel technology company. DPIIT-recognised
+> startup (DIPP223285), Startup Assam registered (MASI2025/804), supported by
+> NRL Ideation.
+
+## What Reservista does
+
+Reservista replaces registers, spreadsheets and disconnected systems with one
+simple, mobile-first dashboard. Hoteliers in Northeast India use it to manage
+bookings, billing, room status, guest profiles and daily reports — all from
+a phone, tablet or laptop, even on slow internet.
+
+## Products
+
+- [Hotel Management Software (PMS)](https://reservista.cloud/hotel-management-software-assam): Bookings, check-ins, room management, guest profiles, GST invoicing, OTA channel sync (Booking.com, MMT, Agoda), reports.
+- [Hotel POS & Billing Software](https://reservista.cloud/hotel-pos-software-assam): Restaurant, bar and cafe billing, KOT, room-charge posting, multi-outlet support, GST-ready invoices.
+- GuestKYC (coming soon): Fast and compliant guest ID verification.
+- MyAlohi (coming soon): Direct-booking site and channel-management tools.
+
+## Company
+
+- [About Megon](https://reservista.cloud/about): Guwahati-based travel technology company building digital infrastructure for hospitality in Northeast India.
+- [Pricing](https://reservista.cloud/pricing)
+- [Book a free demo](https://reservista.cloud/demo)
+- [Contact](https://reservista.cloud/contact)
+
+## Office
+
+Megon Technologies India Pvt. Ltd.
+59, Upper Chachal, VIP Road, Six Mile
+Guwahati – 781022, Assam, India
+
+- Phone: +91-98640-83397
+- Email: contactreservista@gmail.com
+- Hours: Mon–Sat, 9 AM – 7 PM IST
+
+## Recognitions
+
+- Startup India DPIIT recognised — DIPP223285
+- Startup Assam MASI registered — MASI2025/804
+- Supported by NRL Ideation (Numaligarh Refinery Limited)
+
+## Insights
+
+- [Morning routine for hotel managers](https://reservista.cloud/blog/morning-routine)
+- [Restaurant revenue tactics](https://reservista.cloud/blog/restaurant-revenue)
+- [Dynamic pricing for hotels](https://reservista.cloud/blog/dynamic-pricing)
+- [Tech trends 2026](https://reservista.cloud/blog/tech-trends-2026)
+- [Night audit explained](https://reservista.cloud/blog/night-audit)
+- [OTA vs direct bookings](https://reservista.cloud/blog/ota-vs-direct)
+
+## Frequently asked
+
+**What is Reservista?**
+A hotel management (PMS) and point-of-sale (POS) software built for hotels,
+resorts, restaurants, bars and cafes in Assam and Northeast India.
+
+**Who is it for?**
+Small and mid-sized hotels, resorts, homestays and standalone food &
+beverage outlets — particularly properties in Assam, Meghalaya, Arunachal
+Pradesh, Nagaland, Mizoram, Manipur, Tripura and Sikkim.
+
+**Where is the company based?**
+Guwahati, Assam, India. Megon Technologies India Pvt. Ltd. is a registered
+private limited company; office at 59 Upper Chachal, VIP Road, Six Mile,
+Guwahati – 781022.
+
+**Does it work on slow internet?**
+Yes. Reservista is mobile-first and designed to work reliably on 3G/4G
+networks across Northeast India.
+
+**Is support available locally?**
+Yes. Local support is available in Assamese, Hindi and English via WhatsApp,
+phone and email — Mon–Sat, 9 AM – 7 PM IST.
+
+**How do I try it?**
+Book a free demo at https://reservista.cloud/demo or message +91-98640-83397
+on WhatsApp.
